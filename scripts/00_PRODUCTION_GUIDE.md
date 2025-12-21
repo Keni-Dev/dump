@@ -26,7 +26,7 @@
 | **Lorenz**     | Drama King         | Varies              | The Overreactor             | Reaction shots, dramatic moments      |
 | **Rodelyn**    | Chill Queen        | Crochet             | The Unbothered One          | Contrast shots, peaceful vibes        |
 | **Eliesha**    | Emotional Anchor   | Poetry              | The Poet/Emotional One      | Deep moments, inspirational bits      |
-| **Alex**       | Hype Energy        | Gym                 | The Gym Bro                 | Action shots, motivation              |
+| **Alex**       | Creative Energy    | Drawing             | The Artist                  | Aesthetic shots, creative moments     |
 | **Ica**        | The Organized One  | Varies              | The One Who Has It Together | Tutorial moments, "how it should be"  |
 
 ---

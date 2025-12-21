@@ -60,8 +60,8 @@ TEXT: "Rodelyn - 'multitasking' siya"
 [Cut: Eliesha writing poetry pero actually nag-twitterwitter]
 TEXT: "Eliesha - 'naghahanap ng inspiration'"
 
-[Cut: Alex sa gym pero nakaupo lang nagpophone]
-TEXT: "Alex - 'nagrerest between sets' (45 minutes na)"
+[Cut: Alex may sketchbook pero nag-scroll lang]
+TEXT: "Alex - 'naghahanap ng drawing references' (45 minutes na)"
 
 [Cut: Ica may color-coded planner pero nanonood ng reels]
 TEXT: "Ica - 'nagpaplano ng productive day' niya"
@@ -158,8 +158,8 @@ TEXT: "Rodelyn - gumawa ng 3 scarves"
 [Eliesha nagsusulat sa notebook]
 TEXT: "Eliesha - 12 poems na (totoo na)"
 
-[Alex nagwo-workout talaga]
-TEXT: "Alex - nag-gain ng 5 lbs of muscle"
+[Alex nagdo-drawing talaga sa sketchbook]
+TEXT: "Alex - napuno ng 3 pages ng sketchbook"
 
 [Ica nagche-check off ng planner items]
 TEXT: "Ica - naging yung taong pinlan niyang maging"

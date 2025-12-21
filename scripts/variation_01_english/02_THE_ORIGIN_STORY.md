@@ -64,8 +64,8 @@ TEXT: "Rodelyn - 'multitasking'"
 [Cut: Eliesha writing poetry but actually typing tweets]
 TEXT: "Eliesha - 'finding inspiration'"
 
-[Cut: Alex at gym but sitting on bench scrolling]
-TEXT: "Alex - 'resting between sets' (for 45 minutes)"
+[Cut: Alex with sketchbook open but scrolling instead]
+TEXT: "Alex - 'looking for drawing references' (for 45 minutes)"
 
 [Cut: Ica with color-coded planner but watching reels]
 TEXT: "Ica - 'planning her productive day'"
@@ -177,8 +177,8 @@ TEXT: "Rodelyn - made 3 scarves"
 [Eliesha writing in notebook]
 TEXT: "Eliesha - wrote 12 poems (real ones)"
 
-[Alex actually working out]
-TEXT: "Alex - gained 5 lbs of muscle"
+[Alex actually drawing in sketchbook]
+TEXT: "Alex - filled 3 sketchbook pages"
 
 [Ica checking off planner items]
 TEXT: "Ica - became the person she planned to be"

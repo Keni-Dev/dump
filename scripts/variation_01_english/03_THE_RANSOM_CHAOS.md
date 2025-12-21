@@ -68,7 +68,7 @@ KLEEVE BOT: "Ransom owed: ₱100"
 
 LORENZ: *gasps dramatically, hand on chest*
 
-ALEX: *stops mid-workout, shocked pikachu face*
+ALEX: *stops mid-sketch, shocked pikachu face*
 
 RODELYN: *slowly looks up from crochet, disappointed parent energy*
 

@@ -24,7 +24,7 @@ Para sa bawat tao, i-film:
 | Lorenz     | Dramatically nakahiga sa sahig, nag-scroll | Living room floor |
 | Rodelyn    | Phone nakabukas habang nag-c-crochet       | Cozy corner       |
 | Eliesha    | Phone imbes na journal                     | Aesthetic desk    |
-| Alex       | Nakaupo sa gym equipment, nag-scroll       | Gym/home workout  |
+| Alex       | Sketchbook nakabukas pero nag-scroll       | Art corner/desk   |
 | Ica        | Phone katabi ng perfect planner            | Organized desk    |
 | Ellariecia | Nakahiga sa kama, phone sa taas ng mukha   | Bedroom           |
 
@@ -88,7 +88,7 @@ Para sa bawat tao, i-film "after" versions:
 - Lorenz ginagawa ang habit niya calmly
 - Rodelyn nag-c-crochet (walang phone visible)
 - Eliesha nagsusulat ng poetry sa journal
-- Alex talagang nag-wo-workout
+- Alex talagang nagdo-drawing sa sketchbook
 - Ica nagche-check off ng completed tasks
 - Ellariecia productive sa laptop
 ```

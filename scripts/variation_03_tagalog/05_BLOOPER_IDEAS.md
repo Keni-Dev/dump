@@ -232,7 +232,7 @@ ELIESHA:
 
 [Lahat nakatitig sa kawalan]
 
-ALEX: *nagsimulang mag-pushups*
+ALEX: *nagsimulang mag-doodle sa tissue*
 "At least nagagawa ko ang gawain ko."
 ```
 
@@ -352,7 +352,7 @@ Patuloy ang daloy ng nilalaman sa pagitan ng mga pangunahing bidyo
 - "Si Kenny being Kenny"
 - "Mga dramatikong sandali ni Lorenz"
 - "Si Ellariecia nawawalan ng pasensya"
-- "Si Alex na random na nag-eehersisyo"
+- "Si Alex na random na nagdo-doodle"
 ```
 
 ---

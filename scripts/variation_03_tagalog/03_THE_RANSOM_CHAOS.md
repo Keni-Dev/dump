@@ -65,7 +65,7 @@ KLEEVE BOT: "Ransom: ₱100 sa pondo ng grupo"
 LORENZ: *huminga nang malakas at dramatiko, kamay sa dibdib, halos mamatay*
 "KENNY... PAANO MO NAGAWANG GAWIN ITO SA AMIN?!"
 
-ALEX: *huminto sa pag-eehersisyo, nagulat na mukha ng pikachu*
+ALEX: *huminto sa pag-sketch, nagulat na mukha ng pikachu*
 
 RODELYN: *dahan-dahang tumingin mula sa pagkakadena, enerhiya ng disappointed na nanay*
 

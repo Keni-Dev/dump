@@ -229,7 +229,7 @@ ELIESHA:
 
 [Everyone stares into the void]
 
-ALEX: *starts doing pushups*
+ALEX: *starts doodling on napkin*
 "At least I'm getting my habit done."
 ```
 
@@ -420,7 +420,7 @@ Podcast-style commentary optional
 - "Kenny being Kenny"
 - "Lorenz's dramatic moments"
 - "Ellariecia losing patience"
-- "Alex doing random exercises"
+- "Alex doing random doodles"
 ```
 
 ---

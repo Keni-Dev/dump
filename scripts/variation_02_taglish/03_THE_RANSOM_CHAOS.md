@@ -72,7 +72,7 @@ KLEEVE BOT: "Ransom: ₱100 sa group fund"
 LORENZ: *gasp dramatically, kamay sa dibdib, halos mamatay*
 "KENNY... PAANO KA NAGAWA NITO SA AMIN?!"
 
-ALEX: *huminto sa workout, shocked pikachu*
+ALEX: *huminto sa pag-sketch, shocked pikachu*
 
 RODELYN: *dahan-dahang tumingin mula sa crochet, disappointed nanay energy*
 

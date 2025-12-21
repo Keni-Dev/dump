@@ -232,7 +232,7 @@ ELIESHA:
 
 [Lahat naka-stare sa kawalan]
 
-ALEX: *nag-start ng pushups*
+ALEX: *nag-start ng doodle sa tissue*
 "At least nagagawa ko yung habit ko."
 ```
 
@@ -352,7 +352,7 @@ Keeps content flowing between main videos
 - "Si Kenny being Kenny"
 - "Dramatic moments ni Lorenz"
 - "Ellariecia losing patience"
-- "Alex na random lang nag-e-exercise"
+- "Alex na random lang nag-do-doodle"
 ```
 
 ---

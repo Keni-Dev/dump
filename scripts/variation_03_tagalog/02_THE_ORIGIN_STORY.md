@@ -60,8 +60,8 @@ TEKSTO: "Si Rodelyn - 'sabay-sabay' daw ang gawain"
 [Pagpapalit: Si Eliesha nagsusulat ng tula pero nagta-Twitter talaga]
 TEKSTO: "Si Eliesha - 'naghahanap ng inspirasyon'"
 
-[Pagpapalit: Si Alex sa gym pero nakaupo lang nag-scroll]
-TEKSTO: "Si Alex - 'nagpapahinga sa gitna ng mga set' (apatnapu't limang minuto na)"
+[Pagpapalit: Si Alex may sketchbook pero nag-scroll lang]
+TEKSTO: "Si Alex - 'naghahanap ng mga sanggunian sa pagguhit' (apatnapu't limang minuto na)"
 
 [Pagpapalit: Si Ica may planner na may kulay pero nanonood ng reels]
 TEKSTO: "Si Ica - 'nagpaplano ng produktibong araw'"
@@ -152,8 +152,8 @@ TEKSTO: "Si Rodelyn - gumawa ng tatlong bufanda"
 [Si Eliesha nagsusulat sa notebook]
 TEKSTO: "Si Eliesha - labindalawang tula na (totoo na)"
 
-[Si Alex talaga nang nagwo-workout]
-TEKSTO: "Si Alex - kumuha ng limang libra ng kalamnan"
+[Si Alex talagang nagdo-drawing sa sketchbook]
+TEKSTO: "Si Alex - napuno ng tatlong pahina ng sketchbook"
 
 [Si Ica nagche-check off ng mga gawain sa planner]
 TEKSTO: "Si Ica - naging ang tao na ninais niyang maging"

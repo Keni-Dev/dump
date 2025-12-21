@@ -24,7 +24,7 @@ Para sa bawat tao, i-film:
 | Lorenz     | Nakahiga sa sahig nang dramatiko, nag-scroll | Sahig ng sala         |
 | Rodelyn    | Telepono nakabukas habang nagkakadena        | Maalwan na sulok      |
 | Eliesha    | Telepono imbes na journal                    | Aesthetic na mesa     |
-| Alex       | Nakaupo sa gym equipment, nag-scroll         | Gym/home workout      |
+| Alex       | Sketchbook nakabukas pero nag-scroll         | Art corner/mesa       |
 | Ica        | Telepono katabi ng perpektong planner        | Organisadong mesa     |
 | Ellariecia | Nakahiga sa kama, telepono sa taas ng mukha  | Kwarto                |
 

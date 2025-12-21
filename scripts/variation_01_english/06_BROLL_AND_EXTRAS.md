@@ -24,7 +24,7 @@ For each person, film:
 | Lorenz     | Dramatically lying on floor scrolling | Living room floor     |
 | Rodelyn    | Phone propped while crocheting        | Cozy corner           |
 | Eliesha    | Phone instead of writing in journal   | Aesthetic desk        |
-| Alex       | Sitting on gym equipment, scrolling   | Gym/home workout area |
+| Alex       | Sketchbook open but scrolling instead | Art corner/desk       |
 | Ica        | Phone next to perfect planner         | Organized desk        |
 | Ellariecia | In bed, phone above face              | Bedroom               |
 
@@ -95,7 +95,7 @@ For each person, film "after" versions:
 - Lorenz doing his habit calmly
 - Rodelyn crocheting (no phone visible)
 - Eliesha writing poetry in journal
-- Alex working out properly
+- Alex actually drawing in sketchbook
 - Ica checking off completed tasks
 - Ellariecia working on laptop productively
 ```
@@ -427,7 +427,7 @@ Self-aware content
 | Campus      | University life content   | BulSU branding      |
 | Library     | "Actually studying" shots | Quiet, aesthetic    |
 | Coffee shop | "Productive day" vibes    | Natural lighting    |
-| Gym         | Alex's content            | Workout environment |
+| Art corner  | Alex's content            | Creative setup      |
 
 ---
 

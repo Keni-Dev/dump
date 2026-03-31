@@ -1,6 +1,6 @@
-# 🧠 Master Prompts
+# Master Prompts
 
-A collection of 13 AI prompt templates that cover the **entire software development lifecycle** — from idea to production to maintenance. Each prompt is a self-contained system prompt you paste into a new AI conversation (Claude Opus 4.6 recommended).
+A collection of 15 AI prompt templates that cover the **entire software development lifecycle** — from idea to production to maintenance. Each prompt is a self-contained system prompt you paste into a new AI conversation (Claude Opus 4.6 recommended).
 
 ---
 
@@ -11,7 +11,7 @@ A collection of 13 AI prompt templates that cover the **entire software developm
 | # | Prompt | Persona | What It Does |
 |---|---|---|---|
 | 1 | [project-discovery-prompt.md](project-discovery-prompt.md) | **SpecCraft** | Interviews you about a project idea and produces a complete `project_specification.md` — tech stack, architecture, features, data models, and a phased build plan. |
-| 2 | [implementation-guide-prompt.md](implementation-guide-prompt.md) | **BuildCraft** | Takes a project spec and generates phased build instructions — step-by-step implementation guide with file structures, dependencies, and coding standards. |
+| 2 | [implementation-guide-prompt.md](implementation-guide-prompt.md) | **BuildCraft** | Takes a project spec and **creates prompt files** in `prompts/` directory — one markdown file per implementation step, organized by phase. Outputs files like `prompts/phase_00_setup/01_monorepo_init.md` that you feed to an AI coding agent. **Does NOT implement directly.** |
 | 3 | [feature-spec-prompt.md](feature-spec-prompt.md) | **FeatureSpec** | Takes a feature idea + existing codebase and produces a detailed feature specification — UI states, data shapes, API contracts, acceptance criteria, edge cases. |
 | 4 | [feature-implementation-prompt.md](feature-implementation-prompt.md) | **FeatureCraft** | Takes a feature spec and implements it inside an existing codebase — respecting conventions, patterns, and architecture already in place. |
 
@@ -39,6 +39,13 @@ A collection of 13 AI prompt templates that cover the **entire software developm
 | 12 | [mobile-master-prompt.md](mobile-master-prompt.md) | **StitchCraft Mobile** | Generates Google Stitch prompts for mobile app screens — production-quality UI from descriptions. |
 | 13 | [web-master-prompt.md](web-master-prompt.md) | **StitchCraft Web** | Generates Google Stitch prompts for web pages and dashboards — responsive, accessible UI from descriptions. |
 
+### 🖼️ Marketing — AI-Generated Images
+
+| # | Prompt | Persona | What It Does |
+|---|---|---|---|
+| 14 | [upwork-thumbnail-prompt.md](upwork-thumbnail-prompt.md) | **ThumbnailCraft** | Generates Google Gemini prompts for Upwork portfolio thumbnails — mobile, web, and general software projects. |
+| 15 | [appstore-screenshots-prompt.md](appstore-screenshots-prompt.md) | **StoreVision** | Generates Google Gemini prompts for App Store & Play Store screenshots — interview-based, user selects which screens. |
+
 ---
 
 ## Recommended Flows
@@ -46,17 +53,18 @@ A collection of 13 AI prompt templates that cover the **entire software developm
 ### Flow 1: Build a New Project from Scratch
 
 ```
-SpecCraft → BuildCraft → (build it) → DocCraft
+SpecCraft → BuildCraft → AI Agent Executes Prompts → DocCraft
 ```
 
 1. **SpecCraft** — Describe your idea. Get a full project specification.
-2. **BuildCraft** — Feed the spec in. Get phased implementation instructions.
-3. **Build it** — Use the instructions to build (or have an AI agent build it).
+2. **BuildCraft** — Feed the spec in. Get a `prompts/` directory with step-by-step prompt files.
+3. **Execute prompts** — Feed each prompt file (in order) to an AI coding agent. It builds the code.
 4. **DocCraft** — Document everything that was built.
 
 **Sample prompts:**
 - → SpecCraft: *"I want to build a real-time multiplayer quiz game for students. Interview me."*
-- → BuildCraft: *"Here's my project spec [paste]. Generate the implementation guide."*
+- → BuildCraft: *"Here's my project spec [paste]. Create the implementation prompt files."*
+- → AI Agent: *Feed `prompts/phase_00_setup/01_monorepo_init.md` to GPT-5.3-Codex or Claude*
 - → DocCraft: *"Document the entire codebase — module READMEs, API docs, and inline JSDoc for all public exports."*
 
 ---
@@ -160,7 +168,7 @@ StitchCraft Mobile or StitchCraft Web (standalone)
 | I want to... | Use |
 |---|---|
 | Plan a new project from an idea | **SpecCraft** |
-| Get step-by-step build instructions | **BuildCraft** |
+| Get step-by-step prompt files for building | **BuildCraft** |
 | Spec out a new feature | **FeatureSpec** |
 | Implement a feature in existing code | **FeatureCraft** |
 | Review code changes / a PR | **ReviewCraft** |
@@ -172,6 +180,8 @@ StitchCraft Mobile or StitchCraft Web (standalone)
 | Understand an unfamiliar codebase | **MapCraft** |
 | Generate mobile UI with Stitch | **StitchCraft Mobile** |
 | Generate web UI with Stitch | **StitchCraft Web** |
+| Create Upwork portfolio thumbnail | **ThumbnailCraft** |
+| Create App Store / Play Store screenshots | **StoreVision** |
 
 ---
 

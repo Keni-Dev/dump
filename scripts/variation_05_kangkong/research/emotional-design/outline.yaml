@@ -1,0 +1,266 @@
+topic: "Emotional Design for App Development — Psychology, Anti-AI-Slop Aesthetics, and Implementation Tactics"
+generated: "2026-05-07"
+purpose: "Research base for authoring 4 master prompts in .agent/master-prompts/v2/ (Discovery, Spec Q&A, Claude Design code-gen, Google Stitch visual mockup)"
+
+primary_sources:
+  - type: pdf
+    title: "The Architecture of Empathy: Integrating Emotional Design and Cognitive Psychology into Software Engineering"
+    path: ".agent/Emotional Design for App Development.pdf"
+    pages: 8
+  - type: youtube
+    title: "The Secret Behind Weirdly Addictive Apps"
+    url: "https://youtu.be/Du2lkZ_cux8"
+    published: "2025-05-28"
+    case_studies: ["Duolingo", "Phantom Wallet", "Revolut"]
+    framework: "Don Norman's Three Levels (Visceral, Behavioral, Reflective)"
+
+# 27 research items, organized into 5 thematic categories (A-E).
+# Each item will be researched against the field framework in fields.yaml.
+items:
+
+  # ─────────────────────────────────────────────────────────────────
+  # A. FOUNDATIONAL PSYCHOLOGY & FRAMEWORKS (7 items)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 1
+    name: "Don Norman's Tripartite Model (Visceral / Behavioral / Reflective)"
+    category: "A. Foundations"
+    seed_facts:
+      - "Coined in Norman's 2003 book 'Emotional Design'"
+      - "PDF source treats this as the spine of emotional design"
+      - "IxDF maintains updated 2026 overview; framework is stable, no major Norman revision"
+
+  - id: 2
+    name: "Aesthetic-Usability Effect"
+    category: "A. Foundations"
+    seed_facts:
+      - "Kurosu & Kashimura 1995 (Hitachi ATM study, n=252, 26 UI variants)"
+      - "Thielsch et al. meta-analysis: g=0.12 effect on objective performance"
+      - "Mechanism: dopamine-driven cognitive bias (halo effect on usability perception)"
+
+  - id: 3
+    name: "Cognitive Load Theory + Hick's Law + Gestalt Principles"
+    category: "A. Foundations"
+    seed_facts:
+      - "Hick's Law: decision time scales logarithmically with choices"
+      - "Gestalt principles guide pre-attentive grouping"
+      - "Foundation for minimalism (Google search, iOS) high-satisfaction interfaces"
+
+  - id: 4
+    name: "Peak-End Rule (Kahneman) + Onboarding/Churn Application"
+    category: "A. Foundations"
+    seed_facts:
+      - "Kahneman 1993 — memories shaped by peak moment + ending"
+      - "NN/g: front-loaded delight without mid-journey peak underperforms retention"
+      - "Actionable: session-end celebrations, weekly wraps, streak-save moments"
+
+  - id: 5
+    name: "Self-Determination Theory (Autonomy / Competence / Relatedness)"
+    category: "A. Foundations"
+    seed_facts:
+      - "Deci & Ryan — three psychological needs for intrinsic motivation"
+      - "Springer 2024 meta-analysis: SDT-aligned gamification boosts engagement"
+      - "Differentiates ethical engagement from manipulation"
+
+  - id: 6
+    name: "BJ Fogg Behavior Model + Hooked (Eyal) — Habit Formation"
+    category: "A. Foundations"
+    seed_facts:
+      - "Fogg: B = MAP (Motivation × Ability × Prompt)"
+      - "Eyal's Hook: Trigger → Action → Variable Reward → Investment"
+      - "Duolingo's streak architecture is canonical Hook implementation"
+
+  - id: 7
+    name: "Affective Computing & Emotion Measurement"
+    category: "A. Foundations"
+    seed_facts:
+      - "Rosalind Picard, MIT — quantifying emotion via biometrics, facial coding, EEG/fNIRS"
+      - "Used in UX research labs but rarely shipped to consumer apps"
+      - "Signals what to measure; Calm Tech (item 21) signals what to design"
+
+  # ─────────────────────────────────────────────────────────────────
+  # B. PLATFORM EMOTIONAL LANGUAGES & EMPIRICAL DATA (3 items, NEW from web search)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 8
+    name: "Apple Liquid Glass (WWDC 2025) — Platform Emotional Material"
+    category: "B. Platform Languages"
+    seed_facts:
+      - "Announced June 9, 2025 at WWDC25 — translucent material across iOS 26+/macOS"
+      - "Stated value: 'emotion, tactility, environmental presence over blunt efficiency'"
+      - "Mixed reception: legibility issues vs. praise as 'leap forward in HCI'"
+      - "Codifies depth, refraction, dynamic transformation as Apple's official emotional vocabulary"
+
+  - id: 9
+    name: "Material 3 Expressive (Google I/O 2025) — Empirical Emotional Design"
+    category: "B. Platform Languages"
+    seed_facts:
+      - "Announced May 2025 at Google I/O — Android 16+ default"
+      - "46 internal studies, 18,000+ participants — Google's most-researched refresh"
+      - "87% of 18-24-year-olds prefer emotion-centered design"
+      - "UI element recognition up to 4x faster vs. baseline"
+      - "Largest empirical evidence base for emotional design in 2025-2026"
+
+  - id: 10
+    name: "Calm Technology (Weiser & Brown 1995, Amber Case 2015)"
+    category: "B. Platform Languages"
+    seed_facts:
+      - "Weiser & Brown PARC 1995 — 'technology that informs but doesn't demand attention'"
+      - "Amber Case codified 8 Principles at calmtech.com"
+      - "Ethical/aesthetic counter-position to dopamine-driven engagement loops"
+      - "Compatible with SDT (item 5) and oppositional to Hooked (item 6)"
+
+  # ─────────────────────────────────────────────────────────────────
+  # C. BRAND, IDENTITY, & METHODOLOGY (3 items)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 11
+    name: "Jungian Brand Archetypes — Full 12 Applied to Apps"
+    category: "C. Brand & Identity"
+    seed_facts:
+      - "Jung's collective unconscious → Mark & Pearson's 12 archetypes"
+      - "PDF source covers 7: Creator, Sage, Caregiver, Explorer, Magician, Jester, Ruler"
+      - "Need full 12: + Innocent, Hero, Outlaw, Lover, Everyman"
+      - "Selection methodology + concrete UI translations needed"
+
+  - id: 12
+    name: "Distinctive Design Languages — Case Studies"
+    category: "C. Brand & Identity"
+    seed_facts:
+      - "Targets: Duolingo, Headspace, Linear, Arc browser (post-mortem), Notion, Revolut, Apple, Airbnb, Calm, Things 3, Bear, Cron/Notion Calendar, Cash App, Spotify, Phantom Wallet, Raycast"
+      - "Each gets: archetype, design tokens, signature moves, what they did differently"
+
+  - id: 13
+    name: "Karri Saarinen's Quality/Craft Doctrine (Linear)"
+    category: "C. Brand & Identity"
+    seed_facts:
+      - "'Design something for someone, not for everyone'"
+      - "'Opinionated software is better'"
+      - "'Design is search, not a production pipeline'"
+      - "'Quality is a function of patience and focus' (echoed by Rauno Freiberg)"
+      - "Sources: Figma Config 2025, First Round Review podcast, karrisaarinen.com"
+
+  # ─────────────────────────────────────────────────────────────────
+  # D. GRANULAR UI/UX COMPONENTS (6 items)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 14
+    name: "Color Psychology in UI — Cultural & Accessibility Dimensions"
+    category: "D. Components"
+    seed_facts:
+      - "Cultural variation: red (luck CN, danger US), white (purity West, mourning JP)"
+      - "Dark mode psychology: deep navy/charcoal beats #000 — luminous accents"
+      - "Accessibility: WCAG 2.2 contrast minimums, color-blind safe palettes"
+
+  - id: 15
+    name: "Typography & Tone of Voice — Font Personality + Microcopy"
+    category: "D. Components"
+    seed_facts:
+      - "Soft rounded fonts → friendliness (Airbnb tactic)"
+      - "Bold/sharp typography → energy/urgency (Nike, fitness)"
+      - "Microcopy as empathy: Mailchimp Voice & Tone, Slack loading messages"
+      - "Error transformation: '404' → 'Oops, we couldn't find that page'"
+
+  - id: 16
+    name: "Micro-Interactions — Engineering & Library Choices"
+    category: "D. Components"
+    seed_facts:
+      - "60-120fps target, easing curves matter (cubic-bezier discipline)"
+      - "Libraries: Lottie, Framer Motion, React Native Reanimated, Rive"
+      - "Apple sensoryFeedback modifier (iOS 17+) is 2025 best practice"
+      - "Dual purpose: functional feedback + emotional dopamine spike"
+
+  - id: 17
+    name: "Haptic Feedback Architecture — iOS Core Haptics + Android"
+    category: "D. Components"
+    seed_facts:
+      - "iOS Core Haptics: AHAP files, custom patterns; Apple HIG 'Playing Haptics'"
+      - "Android Vibration API + dynamic vibration effect composition"
+      - "When haptics hurt: too-frequent buzzing erodes trust, drains battery"
+
+  - id: 18
+    name: "Sound Design & Silent UX"
+    category: "D. Components"
+    seed_facts:
+      - "Sonic logos (Slack, Apple), notification sound design"
+      - "Default-mute is becoming the norm — silence is also a design choice"
+      - "Calm Tech (item 10) implications for audio"
+
+  - id: 19
+    name: "Loading States & Perceived Performance"
+    category: "D. Components"
+    seed_facts:
+      - "Nielsen thresholds: 0.1s instant, 1s flow-uninterrupted, 10s attention-loss"
+      - "Skeleton screens > spinners (perceived 30% faster)"
+      - "Optimistic UI patterns (Linear, Things 3 task add)"
+
+  # ─────────────────────────────────────────────────────────────────
+  # E. THE ANTI-AI-SLOP PROBLEM + ETHICS + WORKFLOW (5 items)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 20
+    name: "AI-Slop Tells — What Makes Design Feel AI-Generated"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Codified tells: Inter font + purple-blue gradient + identical shadcn cards + 'rounded-xl everywhere' + emoji bullets + AI hero illustrations"
+      - "925studios research: AI-slop sites record 91% lower conversion"
+      - "Distinct phenomenon — not just bad design but a recognizable AI signature"
+
+  - id: 21
+    name: "The Anti-AI-Slop Movement (slopless.design, Monet, 925studios)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Formalized 2025-2026 with named manifestos and tactics"
+      - "Counter-aesthetics: friction, texture, glitch, nostalgia, brutalism, Y2K maximalism, hand-drawn"
+      - "Key sources: slopless.design, monet.design, 925studios, Muzli"
+
+  - id: 22
+    name: "Distinctive Design Moves (Devouring Details craft)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Opinionated typography, asymmetric grids, restrained palette + one bold accent"
+      - "Custom illustration, motion personality, 'weird-but-considered' details"
+      - "Examples: Linear command bar, Arc spaces, Things 3 check animation"
+      - "Devouring Details community as sourcebook"
+
+  - id: 23
+    name: "Maximalism / Y2K / Anti-Minimalism Counter-Aesthetic (2025-2026)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Documented Gen Z rebellion against beige/Inter/clean"
+      - "Bold type, clashing colors, dense layering, bubble letters, embossed buttons"
+      - "MSN/MySpace/early-web nostalgia; Mobbin & Creative Boom flag dominant 2026 counter-trend"
+
+  - id: 24
+    name: "Design Engineer Role & Devouring Details Movement"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Rauno Freiberg (Vercel, ex-Arc), Paco Coursey, Brian Lovin, Linear, Stripe, Cursor"
+      - "Organizational/process item: emotional craft enabled by the role's existence"
+      - "Sources: rauno.me/craft/vercel, devouringdetails.com, vercel.com/blog/design-engineering"
+
+  - id: 25
+    name: "Vibe Design / AI-Codegen Workflow (Lovable, v0, Stitch, Bolt, Claude)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "Production reality: most new app UIs are AI-scaffolded in 2026"
+      - "Muzli insight: 'Brand differentiation is a human judgment... none of these emerge from a prompt'"
+      - "Bridges anti-slop critique (item 20-21) with practical post-scaffold polish"
+
+  - id: 26
+    name: "Dark Patterns & EU Digital Fairness Act (2025-2026)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "DFA extends DSA beyond checkout dark patterns to addictive design, dopamine loops, autoplay"
+      - "First major signal: BEUC SHEIN complaint June 2025"
+      - "Center for Humane Technology critique"
+      - "Legal exposure for streak/notification/FOMO/in-app currency tactics"
+
+  - id: 27
+    name: "Ethical Persuasion Boundary (when emotional design becomes manipulation)"
+    category: "E. Anti-Slop & Ethics"
+    seed_facts:
+      - "SDT (item 5) and Calm Tech (item 10) provide ethical scaffolding"
+      - "Test: does this serve user-stated goals or extract attention against them?"
+      - "Counter-positions: Time Well Spent movement, age-appropriate design code"
+
+execution:
+  batch_size: 6           # parallel agents launched concurrently in research-deep
+  items_per_agent: 5      # 27 items / ~5 = ~5-6 batches; each agent owns one batch
+  output_dir: "./results" # relative to .agent/research/emotional-design/
+  agent_model_hint: "Use sonnet for breadth; agents should fact-check via web search and prefer authoritative sources (Apple HIG, Material docs, NN/g, peer-reviewed papers, Karri Saarinen, Refactoring UI, Rauno) over Medium aggregators"

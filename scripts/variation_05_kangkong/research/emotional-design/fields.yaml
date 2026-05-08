@@ -1,0 +1,96 @@
+topic: "Emotional Design for App Development"
+generated: "2026-05-07"
+purpose: "Per-item field definitions for research-deep agents. Each item in outline.yaml will be filled against these fields."
+
+# Detail levels: brief (1-2 sentences) | moderate (1 short paragraph) | detailed (multi-paragraph with examples)
+
+categories:
+
+  identity:
+    description: "What this concept IS — origin and mechanism"
+    fields:
+      - name: definition_origin
+        description: "Who coined or formalized it, year, seminal source. Brief."
+        detail_level: brief
+
+      - name: core_mechanism
+        description: "The psychological / neurological 'why' it works. What in human cognition does this exploit or satisfy?"
+        detail_level: moderate
+
+      - name: neuroscience_correlate
+        description: "What brain systems engage (mesolimbic dopamine, default mode network, somatosensory cortex, amygdala). Optional — only if substantiated by research."
+        detail_level: brief
+
+  evidence:
+    description: "How we know it works"
+    fields:
+      - name: empirical_evidence
+        description: "Studies, sample sizes, effect sizes, citations. Prefer peer-reviewed or large-N industry research (Material 3 Expressive 18k participants, Thielsch g=0.12, Kurosu & Kashimura n=252)."
+        detail_level: detailed
+
+      - name: measurable_outcome_metric
+        description: "The KPI / metric that operationalizes this concept (D1/D7/D30 retention, session length, NPS, SUS score, completion rate, recognition speed, conversion-rate delta)."
+        detail_level: brief
+
+  application:
+    description: "How to actually use it in app development"
+    fields:
+      - name: engineering_tactics
+        description: "Concrete code/design implementations. Specific component patterns, library choices, configuration values."
+        detail_level: detailed
+
+      - name: real_world_examples
+        description: "Named apps with specific screen/feature references. NOT 'apps like Duolingo' — be specific: 'Duolingo's lesson-complete screen at 0.7s celebration delay'. Min 3 examples."
+        detail_level: detailed
+
+      - name: mobile_vs_web_diffs
+        description: "How this differs on mobile (touch, haptic, thumb zone, native APIs) vs. web (hover, cursor, keyboard, viewport). If no meaningful diff, say so."
+        detail_level: brief
+
+      - name: platform_design_language_alignment
+        description: "Does this align with Liquid Glass (iOS 26+), Material 3 Expressive (Android 16+), or fight against them? Ship-faster guidance."
+        detail_level: brief
+
+  ai_workflow:
+    description: "How to instruct AI design tools to honor this concept"
+    fields:
+      - name: claude_design_application
+        description: "How to instruct Claude (code-gen — React/Tailwind/Reanimated/Framer Motion) for this concept. Include 1-2 example prompt fragments."
+        detail_level: moderate
+
+      - name: stitch_application
+        description: "How to instruct Google Stitch (text-only visual mockup tool) for this concept. Stitch can't accept images; spec must be exhaustive. Include 1-2 example prompt fragments."
+        detail_level: moderate
+
+      - name: ai_codegen_failure_mode
+        description: "How does Claude/Cursor/v0/Lovable typically butcher this principle when generating code? What is the explicit prompt-counter? (e.g., 'AI defaults to Inter — explicitly request Cabinet Grotesk + Manrope and forbid Inter')."
+        detail_level: moderate
+
+  risks:
+    description: "When this concept goes wrong or is dangerous"
+    fields:
+      - name: anti_patterns
+        description: "How it goes wrong, including the 'AI slop' version. Specific don'ts."
+        detail_level: moderate
+
+      - name: regulatory_risk
+        description: "Legal exposure under DFA/DSA, COPPA, age-appropriate design code, GDPR. Especially relevant for streaks, notifications, variable rewards, FOMO, social pressure, in-app currencies. State 'Low/Medium/High' + reason."
+        detail_level: brief
+
+      - name: pitfalls_caveats
+        description: "Subtler issues: cultural variation (covered separately if heavy), accessibility, ethics, performance cost."
+        detail_level: brief
+
+      - name: cross_cultural_validity
+        description: "Non-Western applicability with specific evidence. Color symbolism in CN/JP/AR markets, haptic conventions, microcopy register, RTL considerations. If unknown, say 'unverified'."
+        detail_level: brief
+
+  references:
+    description: "Where to dig further"
+    fields:
+      - name: sources
+        description: "3-8 markdown links to verified authoritative sources. Prefer: Apple HIG, Material Design docs, NN/g, peer-reviewed papers, Don Norman writings, Karri Saarinen posts, Rauno Freiberg, Refactoring UI. Avoid generic Medium aggregators unless they are the sole source."
+        detail_level: brief
+
+# Reserved field — auto-filled by research-deep when an agent can't verify
+uncertain: []

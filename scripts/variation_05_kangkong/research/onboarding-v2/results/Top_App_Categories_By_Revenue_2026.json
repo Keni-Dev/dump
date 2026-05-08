@@ -1,0 +1,170 @@
+{
+  "id": "supplement",
+  "name": "Top 2026 App Categories by Revenue",
+  "category": "Z. Supplement",
+  "purpose": "Inform default category routing in onboarding-v2 master prompts. Sourced from RevenueCat State of Subscription Apps 2025/2026, Adapty 2026 paywall benchmarks, Sensor Tower 2024-2025 reports, data.ai (formerly App Annie) 2025 mobile app market reports, Adjust 2025 mobile app trends, AppMagic 2026 forecasts, and 2024-2025 indie/solo-dev case studies (Mau Baron Prayer Lock, Cal AI, Headway, Headspace).",
+  "fields": {
+    "top_revenue_categories_2025_2026": [
+      {
+        "rank": 1,
+        "category": "AI Productivity / AI-Wrapper Consumer",
+        "revenue_data": "RevenueCat 2025: AI-wrapper category fastest-growing subscription category by revenue, 2× growth YoY. data.ai 2025: ChatGPT mobile alone $250M+ ARR consumer subs by Q4 2024. Adapty 2026: AI-wrapper apps cluster at top of paywall conversion benchmarks despite lower trial conversion (5.31% vs 10.92% avg) — direct purchase rate +14% over avg.",
+        "exemplar_apps": ["ChatGPT (mobile consumer)", "Cal AI ($30M ARR Y1)", "Notion AI", "Headway", "Speak (language)", "Replika"],
+        "growth_2024_to_2026": "+200% YoY revenue (RevenueCat 2025); fastest-growing category in App Store consumer subs",
+        "onboarding_pattern_dominant": "Long Questionnaire (Cal-AI style) OR Story-Onboarding (Mau-Baron style) with AI Plan Reveal at peak",
+        "archetype_lean": "Magician (transformation), Sage (wisdom-led for productivity)",
+        "ltv_benchmark": "$40-80 12mo cohort LTV with weekly+3-day-trial; AI-wrapper hybrid monetization (35% of apps run hybrid per RevenueCat 2025)"
+      },
+      {
+        "rank": 2,
+        "category": "Wellness / Habit / Mindfulness / Meditation",
+        "revenue_data": "Sensor Tower 2024: wellness apps $5B+ consumer subs 2024 (Calm $250M ARR, Headspace ~$200M ARR, Flo ~$50M ARR). RevenueCat 2025: Health & Fitness category 2nd-largest by total revenue, highest D30 retention.",
+        "exemplar_apps": ["Calm", "Headspace", "Flo", "Cal AI", "Noom", "Headspace Therapy (2025)", "Prayer Lock (Mau Baron)"],
+        "growth_2024_to_2026": "+15-20% YoY; AI personalization (Headspace AI Stories, Calm AI sleep stories) driving 2024-2025 growth",
+        "onboarding_pattern_dominant": "Story-Onboarding (Mau-Baron) dominant; Long-Questionnaire (Cal-AI) for metrics-heavy variants (Flo, Cal AI, Noom)",
+        "archetype_lean": "Caregiver (Calm, Headspace), Magician (transformation arc — Cal AI, Headway), Sage (Headspace Therapy)",
+        "ltv_benchmark": "$32-60 12mo cohort LTV; long-onboarding doctrine particularly strong"
+      },
+      {
+        "rank": 3,
+        "category": "Photo & Video / Creative Tools",
+        "revenue_data": "data.ai 2025: photo/video apps $4B+ consumer subs (CapCut, VSCO, Lightroom Mobile, Mojo). Sensor Tower 2025: TikTok/Meta-driven UGC creator economy boosting subscription tier upsell.",
+        "exemplar_apps": ["CapCut", "VSCO", "Lightroom Mobile", "Procreate", "Mojo", "Filmora"],
+        "growth_2024_to_2026": "+10-15% YoY; AI features (CapCut AI, Lightroom Generative Remove) reducing churn",
+        "onboarding_pattern_dominant": "Cinematic 4-Screen (utility-leaning) OR Long Questionnaire (for AI-feature-rich variants like Mojo)",
+        "archetype_lean": "Creator (Procreate, Lightroom), Magician (transformation), Jester (CapCut, VSCO)",
+        "ltv_benchmark": "$25-50 12mo cohort LTV"
+      },
+      {
+        "rank": 4,
+        "category": "Dating",
+        "revenue_data": "Sensor Tower 2024-2025: dating apps $3.5B+ consumer subs. Tinder $1.6B, Bumble $1.1B, Hinge $400M+. AI matchmaking features driving 2024-2025 growth.",
+        "exemplar_apps": ["Tinder", "Bumble", "Hinge", "Match", "OkCupid", "Coffee Meets Bagel"],
+        "growth_2024_to_2026": "+5-8% YoY; Hinge fastest-growing among major dating apps via prompts-led identity onboarding",
+        "onboarding_pattern_dominant": "Story-Onboarding (Hinge prompts arc) OR Long Questionnaire (Match metric-led)",
+        "archetype_lean": "Lover, Hero (Tinder), Caregiver (Hinge prompts)",
+        "ltv_benchmark": "$60-120 12mo cohort LTV (high LTV per user despite churn pressure)"
+      },
+      {
+        "rank": 5,
+        "category": "Education / EdTech (Language + General Learning)",
+        "revenue_data": "data.ai 2025: edtech $3B+ consumer subs (Duolingo $750M ARR; Babbel ~$300M; Headway $100M+; Blinkist $80M+). Duolingo's 113M MAU (Q3 2024) anchors category.",
+        "exemplar_apps": ["Duolingo", "Babbel", "Speak", "Headway", "Blinkist", "Khan Academy Kids", "Brilliant"],
+        "growth_2024_to_2026": "+15% YoY; AI tutoring (Duolingo Max, Babbel AI) driving premium tier conversion",
+        "onboarding_pattern_dominant": "Story-Onboarding for outcome-led (Headway, Blinkist, Babbel); Cinematic 4-Screen for fast-onboarding (Duolingo)",
+        "archetype_lean": "Sage (Brilliant, Babbel), Magician (Duolingo transformation), Hero (Speak)",
+        "ltv_benchmark": "$35-70 12mo cohort LTV"
+      },
+      {
+        "rank": 6,
+        "category": "Entertainment / Streaming Apps",
+        "revenue_data": "Sensor Tower 2024: Netflix mobile ~$1B subs revenue from in-app, Disney+ ~$500M, Spotify ~$8B (mostly web but mobile-aided onboarding). Note: most streaming revenue is web-first, mobile-onboarding-aided.",
+        "exemplar_apps": ["Netflix", "Disney+", "Spotify", "Apple TV+", "HBO Max"],
+        "growth_2024_to_2026": "+5-7% YoY; saturation warning",
+        "onboarding_pattern_dominant": "Frictionless / Cinematic 4-Screen (Spotify); minimal onboarding overall",
+        "archetype_lean": "Various per brand (Netflix Magician, Disney Innocent, Spotify Lover)",
+        "ltv_benchmark": "$120-180 12mo cohort LTV but high churn"
+      },
+      {
+        "rank": 7,
+        "category": "Fintech / Banking / Investing",
+        "revenue_data": "data.ai 2025: fintech consumer apps $2B+ subs (Acorns $250M ARR, Robinhood ~$500M revenue mostly trading not subs, Mint deprecated). Adapty 2026: fintech onboarding paywall placement converts lower than wellness — KYC dominates.",
+        "exemplar_apps": ["Acorns", "Robinhood", "Cash App", "Chime", "Stash", "M1 Finance"],
+        "growth_2024_to_2026": "+8-10% YoY; AI-driven personal finance (Cleo, Copilot) emerging sub-category",
+        "onboarding_pattern_dominant": "Single-Action Fintech (Acorns: link bank account); KYC-first dominates",
+        "archetype_lean": "Sage (Robinhood, M1), Caregiver (Acorns, Cleo), Hero (Cash App)",
+        "ltv_benchmark": "$40-80 12mo cohort LTV"
+      },
+      {
+        "rank": 8,
+        "category": "Productivity / B2B SaaS Mobile Companion",
+        "revenue_data": "RevenueCat 2025: productivity is 4th-largest by revenue, smaller per-user but higher LTV for B2B (Notion mobile companion ~$50M+ subscription contribution; Linear, Cron, Sunsama smaller but high-LTV).",
+        "exemplar_apps": ["Notion", "Linear", "Cron / Notion Calendar", "Sunsama", "Things 3", "Bear", "Drafts"],
+        "growth_2024_to_2026": "+10% YoY; B2B-led growth, mobile is companion not primary",
+        "onboarding_pattern_dominant": "Frictionless (Notion, Linear); minimal-onboarding doctrine (Karri Saarinen / Linear influence)",
+        "archetype_lean": "Sage (Linear, Notion), Ruler (Cron), Creator (Bear, Drafts)",
+        "ltv_benchmark": "$80-180 12mo cohort LTV (B2B premium)"
+      },
+      {
+        "rank": 9,
+        "category": "Fitness / Workout",
+        "revenue_data": "data.ai 2025: fitness apps $1.5B+ consumer subs (Strava $200M ARR, Whoop premium ~$150M, Centr, Apple Fitness+). Sensor Tower 2024: highest D30 churn but stable recurring revenue.",
+        "exemplar_apps": ["Strava", "Whoop", "Centr", "Apple Fitness+", "Nike Training Club", "Peloton (mobile)"],
+        "growth_2024_to_2026": "+8% YoY; AI personalization (Whoop, Apple Fitness+ AI coach) driving premium tier",
+        "onboarding_pattern_dominant": "Long Questionnaire (Whoop body-metrics first) OR Story-Onboarding (Strava community-led)",
+        "archetype_lean": "Hero (Whoop, Centr), Magician (Apple Fitness+ transformation), Lover (Strava community)",
+        "ltv_benchmark": "$30-60 12mo cohort LTV"
+      },
+      {
+        "rank": 10,
+        "category": "Spiritual / Faith / Meditation (Faith-specific)",
+        "revenue_data": "Adapty 2026 case studies: faith-led apps Hallow $40M+ ARR, Pray.com ~$30M ARR, Prayer Lock (Mau Baron) $40K→$150K/mo trajectory. Underserved category with low competition + high LTV.",
+        "exemplar_apps": ["Hallow", "Pray.com", "Prayer Lock (Mau Baron)", "YouVersion Bible (free)", "Glorify"],
+        "growth_2024_to_2026": "+25-30% YoY; SOLO-DEV-FRIENDLY category (Mau Baron solo founder example)",
+        "onboarding_pattern_dominant": "Story-Onboarding (Mau-Baron 5-act) — identity + narrative core",
+        "archetype_lean": "Caregiver (Pray.com), Sage (YouVersion), Magician (Prayer Lock transformation)",
+        "ltv_benchmark": "$50-90 12mo cohort LTV"
+      },
+      {
+        "rank": 11,
+        "category": "Journaling / Mental Health (Adjacent to Wellness)",
+        "revenue_data": "Sensor Tower 2024: journaling/mental-health apps $800M+ consumer subs (Reflectly, Day One, Stoic, Dot, Finch). Sub-category of wellness, growing fastest.",
+        "exemplar_apps": ["Reflectly", "Day One", "Stoic", "Dot", "Finch", "Journey"],
+        "growth_2024_to_2026": "+20% YoY; AI-prompted journaling (Reflectly AI, Stoic AI) driving 2024 growth",
+        "onboarding_pattern_dominant": "Story-Onboarding (identity-led); Time-of-Day-Aware (item 63) particularly relevant",
+        "archetype_lean": "Sage (Stoic), Caregiver (Reflectly, Finch), Creator (Day One)",
+        "ltv_benchmark": "$25-45 12mo cohort LTV"
+      },
+      {
+        "rank": 12,
+        "category": "Social / Community Apps (Non-Dating)",
+        "revenue_data": "Mostly free with creator-economy subs; Patreon mobile, Substack mobile, Discord Nitro, BeReal. Subscription revenue growing but ad-led monetization dominates.",
+        "exemplar_apps": ["Discord", "Patreon", "Substack", "BeReal", "Geneva", "Locket"],
+        "growth_2024_to_2026": "Mixed; subscription tier growing within mostly-free apps",
+        "onboarding_pattern_dominant": "Frictionless / Deferred (network-effect dependent)",
+        "archetype_lean": "Lover (Locket), Jester (BeReal, Discord), Outlaw (Substack indie creators)",
+        "ltv_benchmark": "$15-30 12mo cohort LTV"
+      }
+    ],
+    "fastest_growing_2025_2026": [
+      "AI Productivity / AI-Wrapper Consumer (+200% YoY)",
+      "Spiritual / Faith / Meditation (+25-30% YoY) — solo-dev-friendly",
+      "Journaling / Mental Health (+20% YoY)",
+      "Wellness AI Personalization sub-niche (+30%+ YoY)"
+    ],
+    "highest_ltv_categories": [
+      "Productivity / B2B SaaS Mobile Companion ($80-180 12mo LTV)",
+      "Entertainment / Streaming ($120-180 LTV but high churn)",
+      "Dating ($60-120 LTV)",
+      "Spiritual / Faith ($50-90 LTV)",
+      "AI Productivity ($40-80 LTV)"
+    ],
+    "solo_dev_friendly_categories": [
+      "Spiritual / Faith / Meditation (Mau Baron Prayer Lock proof — solo founder $40K→$150K/mo; underserved niche; community-led distribution)",
+      "Journaling / Mental Health (small surface, identity-led, story-onboarding)",
+      "Niche Wellness sub-categories (e.g., perimenopause, sleep-anxiety, chronic pain — underserved)",
+      "AI-Wrapper for niche workflows (writing, coding, design, language — defensible via niche moat)",
+      "Time-of-Day or Identity-Specific journaling (e.g., evening reflection, morning planning)"
+    ],
+    "saturation_warning_categories": [
+      "General-Purpose AI Chat (ChatGPT mobile saturates the consumer general-AI space; underserved niches still open)",
+      "General Habit Tracking (saturated with Streaks, Habitify, Tally; differentiation via category-specific niche only)",
+      "General Calorie Tracking (Cal AI, Lose It!, MyFitnessPal saturate; differentiation via specific dietary niche only — keto, halal, autoimmune)",
+      "Generic Meditation (Calm + Headspace duopoly; specific niches still open — sleep, faith-aligned, post-trauma)",
+      "Streaming (Netflix/Disney+/Spotify duopoly+; mobile-onboarding-aided not standalone-app-led)",
+      "Dating (incumbents dominant — only category-specific dating apps differentiate now)"
+    ]
+  },
+  "sources": [
+    "[RevenueCat State of Subscription Apps 2025](https://www.revenuecat.com/state-of-subscription-apps-2025/)",
+    "[RevenueCat State of Subscription Apps 2026](https://www.revenuecat.com/state-of-subscription-apps/)",
+    "[Adapty High-Performing Paywall 2026](https://adapty.io/blog/high-performing-paywall-2026/)",
+    "[data.ai (App Annie) 2025 Mobile App Market Reports](https://www.data.ai/en/insights/market-data/state-of-mobile-2025/)",
+    "[Sensor Tower 2024-2025 Top Subscription Apps](https://sensortower.com/blog/top-grossing-mobile-apps-2024)",
+    "[Adjust 2025 Mobile App Trends](https://www.adjust.com/resources/reports/mobile-app-trends-2025/)",
+    "[Mau Baron Starter Story Playbook (Prayer Lock)](https://www.starterstory.com/mou)",
+    "[Subscription Insider 2025 RevenueCat Analysis](https://www.subscriptioninsider.com/article-type/news/revenuecats-state-of-subscription-apps-2025-report-ais-dominance-retention-challenges-and-the-shift-away-from-pure-subscriptions)",
+    "[AppMagic Mobile Forecasts 2026](https://appmagic.rocks/dashboards)",
+    "[Cal AI $30M ARR Coverage — getlatka](https://getlatka.com/blog/how-cal-ai-achieved-35-million-revenue-in-just-one-year/)"
+  ]
+}

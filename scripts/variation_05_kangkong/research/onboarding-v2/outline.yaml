@@ -1,0 +1,765 @@
+topic: "Mobile App Onboarding v2 — Psychology, Design, Architecture, Monetization, Compliance for 2026 (Solo-Dev-First)"
+generated: "2026-05-08"
+purpose: "Research base for authoring 6 master prompts in .agent/master-prompts/onboarding-v2/ (PsychCraft v2, ClaudeDesign Onboarding v2 / StitchCraft Onboarding v2, FlowCraft v2, OnboardBuild v2, FunnelCraft v2, GateCraft v2). Tightly integrates with .agent/research/emotional-design/ and .agent/master-prompts/v2/."
+
+primary_sources:
+  - type: pdf
+    title: "Strategic Architecture and Psychological Frameworks for Mobile Application Onboarding"
+    path: ".agent/Deep Dive Into App Onboarding.pdf"
+    pages: 21
+    citations: 67
+
+  - type: youtube
+    title: "How To Reach 10,000 App Users (Beginner Marketing) — Mau Baron"
+    url: "https://youtu.be/e_t1gYkvZkI"
+    creator: "Mau Baron (Prayer Lock; ~$40K/mo solo founder, scaling)"
+    framework: "Distribution-first onboarding: UGC pipeline → Spark Ads ladder → 5→15min story onboarding"
+    proxy_source: "https://www.starterstory.com/mou (full first-person playbook)"
+
+  - type: youtube
+    title: "Why 99% of Apps Fail (And How I Scaled to $150K/Month) — Mau Baron"
+    url: "https://youtu.be/aYzZ6VywNa0"
+    creator: "Mau Baron (Prayer Lock; $150K/mo update)"
+    framework: "Funnel-as-product: affirm → demo → personalize → AI reveal → paywall"
+
+  - type: report
+    title: "RevenueCat State of Subscription Apps 2025 / 2026"
+    url: "https://www.revenuecat.com/state-of-subscription-apps/"
+    key_findings:
+      - "Hard paywalls = 21% higher LTV; soft paywalls convert ~50% better"
+      - "AI-wrapper trial conversion 5.31% (vs 10.92% avg) but +14% direct purchase"
+      - "35% of apps now run hybrid monetization (sub + consumable + lifetime)"
+
+  - type: report
+    title: "Adapty High-Performing Paywall 2026"
+    url: "https://adapty.io/blog/high-performing-paywall-2026/"
+    key_findings:
+      - "Onboarding paywall converts 1.35% (highest of any placement)"
+      - "Weekly+3-day-trial → $54.50 12mo LTV vs $7.40 without (636% lift)"
+      - "Top performers run 14.7 paywall experiments/yr"
+      - "Localization: 62.3% LTV win rate (highest of any test type)"
+      - "90% of trial starts on Day 0; 44.5% of all purchases on Day 0"
+
+  - type: regulation
+    title: "Apple App Store Review Guideline Updates"
+    citations:
+      - "Guideline 3.1.2 — toggle-paywall ban effective January 2026"
+      - "Guideline 3.1.1 — IAP subscription disclosure"
+      - "Guideline 4.8 — sign-in alternatives"
+      - "Guideline 5.1.1(v) — data minimization in onboarding"
+
+  - type: regulation
+    title: "FTC Click-to-Cancel Rule"
+    effective: "2025-07-14"
+    summary: "Cancellation must be as easy as signup; onboarding subscription disclosure must mirror cancellation pathway"
+
+  - type: regulation
+    title: "Amended COPPA Rule"
+    finalized: "2025-04-22"
+    compliance_deadline: "2026-04-22"
+    summary: "Expanded 'personal information' to persistent IDs, biometric, geolocation, behavioral. Mixed-audience apps must use neutral birthdate gates and route under-13s to verifiable parental consent. Disney $10M settlement Dec 2025 sets enforcement tone."
+
+  - type: regulation
+    title: "EU Digital Fairness Act (draft Q4 2026)"
+    summary: "Targets dark patterns, addictive design, manipulative consent UIs, subscription/cancellation traps, with strong protection for minors."
+
+  - type: research_program
+    title: "Material 3 Expressive (Google I/O 2025)"
+    studies: 46
+    participants: 18000
+    findings:
+      - "Eye-tracking: key UI elements found 4× faster vs current M3"
+      - "Removed age-effect on usability speed for users 45+"
+      - "87% of 18-24-year-olds prefer emotion-centered design"
+
+  - type: design_system
+    title: "Apple Liquid Glass (WWDC25)"
+    released: "2025-06"
+    summary: "Translucent material across iOS/iPadOS/macOS/watchOS/tvOS 26+. Bolder left-aligned typography for alerts and onboarding. Controls morph dynamically."
+
+# 65 research items, organized into 16 thematic categories.
+# Each item is filled against the field framework in fields.yaml.
+items:
+
+  # ─────────────────────────────────────────────────────────────────
+  # A. PSYCHOLOGY FOUNDATIONS (8)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 1
+    name: "Hook Model — Trigger / Action / Variable Reward / Investment"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Nir Eyal, Hooked (2014); 4-phase cycle for habit formation"
+      - "Onboarding flow = first traversal of the hook — establishes the loop"
+      - "Investment phase makes switching costly; loads the next external trigger"
+      - "Duolingo streak architecture = canonical Hook implementation"
+
+  - id: 2
+    name: "Cognitive Load Theory in Onboarding"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Sweller 1988 — working memory ~3-7 items; intrinsic vs extraneous vs germane load"
+      - "PMC11422584 (2024): mobile-learning cognitive-load questionnaire validates item-by-item load measurement"
+      - "PDF anchor study (PMC12956955): initial complexity creates persistent anchor — overrides actual utility"
+      - "Implication: every onboarding screen must do exactly one thing"
+
+  - id: 3
+    name: "First Impression Anchoring Bias"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Anchoring bias (Tversky & Kahneman 1974); first piece of info disproportionately weighted"
+      - "Cohort study (PMC12956955, N1=100, N2=87, N3=80): initial complexity perception persists regardless of later utility"
+      - "Implication: opening 7-10 seconds determine entire app perception"
+      - "Counter-tactic: opening must show CARE, not CAPABILITY"
+
+  - id: 4
+    name: "Sunk Cost Fallacy / IKEA Effect — The Long-Onboarding Paradox"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "IKEA Effect (Norton et al. 2012): people overvalue what they helped create"
+      - "Sunk Cost: minutes invested in personalization → unwillingness to abandon"
+      - "Cal AI (33 steps → $30M ARR Y1), Flo (height/health/side-effects → trial), Puff Count (smoking-pain survey → hard paywall)"
+      - "Mau Baron's quote: '5 → 15 min onboarding tripled organic conversion'"
+      - "Inverts the 'minimize friction' default — strategic friction builds value"
+
+  - id: 5
+    name: "Self-Determination Theory (Autonomy / Competence / Relatedness)"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Deci & Ryan — three psychological needs for intrinsic motivation"
+      - "Springer 2024 meta-analysis: SDT-aligned gamification boosts engagement"
+      - "Onboarding application: choices (autonomy), early wins (competence), community sense (relatedness)"
+      - "Tension with Hook Model — SDT is the ethical scaffolding"
+
+  - id: 6
+    name: "Peak-End Rule for First-Session Memory"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Kahneman 1993 — memory shaped by peak moment + ending, not duration"
+      - "Onboarding = the user's first session; its peak + end define their cognitive anchor"
+      - "Cal AI's 'mid-onboarding review prompt' = engineered peak deployed at activation"
+      - "NN/g: front-loaded delight without mid-journey peak underperforms retention"
+
+  - id: 7
+    name: "Goal-Gradient Effect & Progress Indicator Psychology"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Hull 1932 / Kivetz et al. 2006: motivation increases as goal nears"
+      - "Endowed-progress (head start on punch card) doubles completion rates"
+      - "Multi-step flows w/ progress ('Step 2 of 5') yield materially higher completion"
+      - "Progress bars must show motion within 200ms of input"
+
+  - id: 8
+    name: "Hick's Law + Decision Fatigue"
+    category: "A. Psychology Foundations"
+    seed_facts:
+      - "Hick 1952: decision time scales logarithmically with choices"
+      - "Each onboarding question adds load; load compounds toward abandonment"
+      - "Workaround: use prepopulated defaults (recommended highlight) + 3-4 options/screen max"
+      - "Critical for paywall plan-selection psychology"
+
+  # ─────────────────────────────────────────────────────────────────
+  # B. AHA MOMENT & ACTIVATION (7)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 9
+    name: "Aha Moment vs Activation — Distinction"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "Aha = cognitive realization of value (Uber: 'I can summon a car here')"
+      - "Activation = first successful use of core feature (Uber: 'I ordered my first ride')"
+      - "Onboarding must hit Aha before friction; can defer activation"
+      - "Source: Appcues Aha Moment Guide, ProductLed"
+
+  - id: 10
+    name: "Time-to-Value (TTV) Frameworks"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "Reforge: TTV = time-from-install to first-perceived-value moment"
+      - "Industry target: TTV < 60 seconds for consumer mobile"
+      - "Eleken examples: Linear, Cron, Stripe Atlas — sub-minute TTV"
+      - "Long-onboarding apps achieve TTV via promise-front-loading + AI-reveal at end"
+
+  - id: 11
+    name: "Behavioral Cohort Analysis to Discover Aha"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "Compare retained-cohort actions vs churned-cohort actions"
+      - "Facebook's '7 friends in 10 days', Slack's '2000 messages', Twitter's '30 follows'"
+      - "Method: PostHog/Mixpanel/Amplitude funnel comparison; behavioral correlation > intuition"
+      - "For new apps without data: borrow from category benchmarks; iterate post-launch"
+
+  - id: 12
+    name: "AI-Generated Plan Reveal as Activation Moment"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "Cal AI: questionnaire answers → GPT-personalized macro plan → reveal → $30M ARR Y1"
+      - "Mau Baron Prayer Lock: questionnaire → AI-generated personalized prayer reveal"
+      - "Distinct from 'data seeding' — this is *generative* (LLM-driven), not pre-loaded"
+      - "Aha is created BY the LLM during onboarding, before user has done anything in-app"
+      - "Trade-off: latency, cost, offline-fallback design"
+
+  - id: 13
+    name: "Personalized-Plan Loader / Theatrical Wait"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "2-10s loader animation: 'Analyzing your responses... Cross-referencing 2.4M users like you...'"
+      - "Adapty 2026: top-performing pattern; doubles trust + conversion"
+      - "NOT 'Wasted Loading' antipattern — this is engineered loading with narrative"
+      - "Failure mode: loader < 3s feels fake; loader > 12s feels broken"
+
+  - id: 14
+    name: "Cross-Step Personalization Stitching"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "User's answer in step 3 visibly changes copy in step 7 ('Because you said you wanted to lose 10lb...')"
+      - "Headway, Cal AI, Flo, Noom all do this; Mobbin teardowns confirm"
+      - "Difference between data collection and *felt* personalization"
+      - "Implementation: state-machine context object passed across screens"
+
+  - id: 15
+    name: "Mid-Onboarding Review Prompt"
+    category: "B. Aha & Activation"
+    seed_facts:
+      - "Cal AI prompts for App Store review DURING onboarding (after AI plan reveal, before paywall)"
+      - "Counterintuitive — works because peak emotional state is engineered there"
+      - "Avoids App Store review-fatigue mid-app where typical reviews fire"
+      - "Pairs Peak-End Rule (item 6) with concrete implementation"
+
+  # ─────────────────────────────────────────────────────────────────
+  # C. ONBOARDING PATTERNS (10)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 16
+    name: "Progressive Disclosure"
+    category: "C. Patterns"
+    seed_facts:
+      - "NN/G canonical pattern; sequence info/actions; defer secondary functions"
+      - "Counter to 'single-screen' antipattern"
+      - "Applies recursively: account → personalization → permissions → paywall → empty state"
+      - "YouTube Android coach marks = canonical contextual progressive disclosure"
+
+  - id: 17
+    name: "Long Questionnaire / Sunk-Cost Pattern (Cal-AI Style)"
+    category: "C. Patterns"
+    seed_facts:
+      - "Cal AI 33-step quiz with AI plan reveal at step ~30 → soft paywall"
+      - "Flo period-tracker height/health/side-effects → mandatory trial commitment"
+      - "Puff Count smoking-cessation pain survey → hard paywall"
+      - "Mechanism: sunk cost + endowment + peak (AI reveal) + paywall = hardest convert"
+
+  - id: 18
+    name: "Story-Onboarding Doctrine 5-15min (Mau-Baron Style)"
+    category: "C. Patterns"
+    seed_facts:
+      - "Mau Baron Prayer Lock: 5min → 15min extension tripled organic conversion"
+      - "Structure: affirm → social proof → demo → personalize → AI reveal → paywall"
+      - "Each step EARNS the next; narrative arc is load-bearing"
+      - "Distinct from Cal-AI's questionnaire-heavy version: story uses identity/emotion, not data collection"
+      - "Direct quote: 'as long as it's adding value and telling a story, the longer the better'"
+
+  - id: 19
+    name: "Frictionless / Deferred Pattern"
+    category: "C. Patterns"
+    seed_facts:
+      - "Instagram: username + password only; assumes user knows the value"
+      - "Acorns: defines onboarding success strictly as 'link bank account'"
+      - "Works only when category value is universally understood"
+      - "Wrong choice for novel categories or high-LTV verticals"
+
+  - id: 20
+    name: "Benefits-Led vs Feature-Led Narrative Architecture"
+    category: "C. Patterns"
+    seed_facts:
+      - "Blinkist: 'Understand powerful ideas in 15 minutes' (outcome) vs 'thousands of book summaries' (feature)"
+      - "Users are indifferent to algorithms/tech stacks; care about resolution of stressors"
+      - "Onboarding narrative must aggressively sell outcomes, not technical inventories"
+
+  - id: 21
+    name: "Empty State + Data Seeding"
+    category: "C. Patterns"
+    seed_facts:
+      - "Bare dashboard = critical drop-off point post-onboarding"
+      - "Seed: template content, instructional artifacts, sandbox examples, pre-populated friend suggestions"
+      - "Notion's 'getting started' templates, Linear's example issues, Spotify's onboarding-derived first playlist"
+      - "Different from AI Plan Reveal (item 12): seeded data is *static*, not generated"
+
+  - id: 22
+    name: "Coach Marks / Spotlights / Tooltips"
+    category: "C. Patterns"
+    seed_facts:
+      - "YouTube Android = canonical contextual coach mark"
+      - "Trigger only when user navigates to unfamiliar section (not on cold launch)"
+      - "Industry tooling: Plotline, Appcues Mobile, Pendo, Product Fruits"
+      - "Failure mode: deck-of-cards carousel as a substitute (taxes working memory)"
+
+  - id: 23
+    name: "Interactive Walkthroughs (Learn-by-Doing)"
+    category: "C. Patterns"
+    seed_facts:
+      - "Pudding Monsters animated hand-overlay = canonical learn-by-doing"
+      - "Practice round in low-stakes sandbox before live data"
+      - "Most effective for complex/unfamiliar workflows (gaming, creative tools)"
+      - "AI-codegen failure: defaults to a deck-of-cards 'tour' instead of true interaction"
+
+  - id: 24
+    name: "Permission Priming Pattern (incl. Permission Ladder)"
+    category: "C. Patterns"
+    seed_facts:
+      - "Pre-permission education screen → soft ask → native dialog"
+      - "Order matters: push primer → soft ask → native, THEN ATT, THEN feature-gated (camera/location/health)"
+      - "iOS opt-in average 43.9% / Android 81.5% (2025); planned ladder closes that gap"
+      - "Counter to Contextless Permissions antipattern"
+
+  - id: 25
+    name: "Cinematic 4-Screen Pattern (Adam Lyttle)"
+    category: "C. Patterns"
+    seed_facts:
+      - "Welcome / Social Proof / Core Demo / Paywall — fullscreen animated"
+      - "For apps that don't need personalization (utilities, single-feature)"
+      - "Distinct from long-questionnaire — the value prop is universal enough to skip personalization"
+      - "Source: infocaptor.com summary of Adam Lyttle's onboarding teardown"
+
+  # ─────────────────────────────────────────────────────────────────
+  # D. QUESTIONNAIRE DESIGN (4)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 26
+    name: "Question Sequencing Strategy"
+    category: "D. Questionnaire"
+    seed_facts:
+      - "Low-friction first (preference: 'pick a color'), commitment-building middle (goals), painpoint placement (engineered peak), identity at end"
+      - "Cal AI sequencing: appearance → goals → metrics → constraints → AI reveal"
+      - "Wrong sequencing: demographic-heavy openings feel like data collection, not personalization"
+      - "Sunk-cost compounds question-by-question — order matters"
+
+  - id: 27
+    name: "Question Type Taxonomy"
+    category: "D. Questionnaire"
+    seed_facts:
+      - "Types: preference (color/style), demographic (age/gender), goal (target weight/streak), painpoint (what hurts now), identity (who you are), social-proof punctuation ('5M users like you...')"
+      - "Mix types — homogeneous types feel like a survey, not a journey"
+      - "Cal AI uses ~6 distinct types across 33 steps"
+      - "Identity questions (e.g., 'Are you a runner?') outperform demographic ('What's your age range?')"
+
+  - id: 28
+    name: "Conversational vs Form-Style"
+    category: "D. Questionnaire"
+    seed_facts:
+      - "Conversational: one question per screen, big-button selection, text speech-bubble framing"
+      - "Form: multi-question density (DMV-style)"
+      - "Conversational dominates 2024-2026 onboarding (Cal AI, Flo, Headspace, Mau Baron)"
+      - "Form-style only acceptable for mandatory KYC/auth flows"
+
+  - id: 29
+    name: "Progress Indicators & Step Architecture"
+    category: "D. Questionnaire"
+    seed_facts:
+      - "Multi-step bars showing 'Step 2 of 5' yield materially higher completion (PDF cite)"
+      - "Endowed-progress: start at 'Step 2 of 8' rather than 'Step 1 of 7'"
+      - "Bar fill speed must feel proportional to step (not equal-width gimmick)"
+      - "Long onboarding (33 steps): chunked sub-progress ('Section 2 of 4 / Step 2 of 8') reduces fatigue"
+
+  # ─────────────────────────────────────────────────────────────────
+  # E. ARCHITECTURE (4)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 30
+    name: "Finite State Machine Architecture"
+    category: "E. Architecture"
+    seed_facts:
+      - "XState v5 (TS-first, persistence helpers) is industry standard 2025-2026"
+      - "PDF: 'onboarding is not a sequence of views — it is a state machine'"
+      - "BLoC pattern (Flutter), Manager-of-Flows (iOS), unidirectional data flow (React Native)"
+      - "States are mutually-exclusive enums; events trigger transitions; reducers are pure"
+
+  - id: 31
+    name: "Server-Driven UI for Onboarding"
+    category: "E. Architecture"
+    seed_facts:
+      - "Mobile client renders dynamically from JSON payload (sequence + config + layout)"
+      - "Bypasses App Store review cycle for onboarding A/B tests"
+      - "Lovi's protocol-oriented approach (Medium @ortayevn)"
+      - "Trade-off: bundle complexity vs iteration speed"
+      - "Critical when CAC is high — every day of slow iteration burns acquisition budget"
+
+  - id: 32
+    name: "State Persistence + Fault Tolerance"
+    category: "E. Architecture"
+    seed_facts:
+      - "Client-side: MMKV (RN, synchronous), UserDefaults (iOS), SharedPreferences (Android)"
+      - "Server-side: every step dispatches async payload; backend = source of truth"
+      - "Saga pattern / Temporal for paywall + inventory + IAP coordination"
+      - "Network-flap recovery, background-termination resilience required"
+
+  - id: 33
+    name: "Cross-Device Resume Hydration"
+    category: "E. Architecture"
+    seed_facts:
+      - "User uninstalls in frustration at step 6 → reinstalls weeks later → resume from step 6"
+      - "Backend hydrates local state machine on auth"
+      - "Reduces lost-funnel cost; especially important for high-CAC apps"
+      - "Implementation: server stores onboarding_state per user_id; client requests on auth"
+
+  # ─────────────────────────────────────────────────────────────────
+  # F. MONETIZATION (9)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 34
+    name: "Hard Paywall at Onboarding Climax (incl. Toggle-Paywall Ban)"
+    category: "F. Monetization"
+    seed_facts:
+      - "PDF: 'highest volume of subscription conversions occurs during initial onboarding session'"
+      - "Adapty 2026: 1.35% trial conversion at onboarding paywall (highest of any placement)"
+      - "Hard paywall = no skip, no close — at apex of sunk-cost investment"
+      - "**2026-01 Apple Guideline 3.1.2 update: TOGGLE PAYWALLS BANNED** — replace with side-by-side plan selection or timeline transparency"
+      - "RevenueCat 2025: hard paywalls = 21% higher LTV; soft paywalls convert ~50% better"
+
+  - id: 35
+    name: "Trial vs Direct Purchase Decision"
+    category: "F. Monetization"
+    seed_facts:
+      - "Adapty 2026: weekly + 3-day-trial = $54.50 12mo LTV vs $7.40 without (636% lift)"
+      - "AI-wrapper apps see lower trial conv (5.31%) but +14% direct purchase"
+      - "Trial works for habit/wellness; direct works for AI-magic-moment apps"
+      - "Apple/Google sandbox testing requirement — sandbox flow != prod"
+
+  - id: 36
+    name: "Onboarding Localization (incl. Paywall)"
+    category: "F. Monetization"
+    seed_facts:
+      - "Adapty 2026: localization has 62.3% LTV win rate (highest of any test type)"
+      - "LATAM: aggressive discount anchoring + monthly-equivalent pricing"
+      - "Asia/JP: social proof, verifiable trust indicators, testimonials in UI"
+      - "US/EU: nuanced wording + localized price points (Apple's auto-conversion ≠ optimal)"
+      - "Translation alone insufficient — regional purchasing-behavior expectations differ"
+
+  - id: 37
+    name: "Persistent Buy-Now / Upgrade CTA"
+    category: "F. Monetization"
+    seed_facts:
+      - "PDF: persistent CTA throughout interface = 10-20% revenue lift"
+      - "Always-visible upgrade button bypasses need to re-traverse paywall path"
+      - "Implementation: floating-action-button or top-bar pattern"
+      - "Avoid: showing on every screen for free users (becomes blind-spot)"
+
+  - id: 38
+    name: "Plan Selection Psychology"
+    category: "F. Monetization"
+    seed_facts:
+      - "Decoy effect: 3 plans where middle = bait, top = real target"
+      - "Default highlighting: pre-select annual at 'most popular' badge"
+      - "Anchoring: show monthly/annual savings ('Save 67%')"
+      - "Post-toggle-ban (2026-01): side-by-side plan selection now mandatory"
+      - "Hick's Law: 3-4 plans max; 5+ tanks conversion"
+
+  - id: 39
+    name: "Post-Decline / Win-Back Paywall"
+    category: "F. Monetization"
+    seed_facts:
+      - "Fires when user dismisses primary paywall — offers different SKU (monthly vs annual; 50% off first period)"
+      - "Adapty 2026: top-converting compliant alternative to toggle paywalls"
+      - "Distinct from persistent CTA — single re-offer, not always-visible"
+      - "Risk: regulators flag aggressive win-backs as dark pattern (DFA Q4 2026)"
+
+  - id: 40
+    name: "Web-Checkout Parallel Funnel"
+    category: "F. Monetization"
+    seed_facts:
+      - "Post-Apple/Epic ruling + StoreKit External Purchase Link Entitlement"
+      - "Higher margin (no 30% Apple cut); ~25-30% revenue lift on routed users"
+      - "Onboarding deep-links to web checkout, deep-links back to app"
+      - "Apple still requires explicit disclosure modal before redirect"
+      - "Android more permissive than iOS"
+
+  - id: 41
+    name: "Hybrid Monetization (Sub + Consumable + Lifetime)"
+    category: "F. Monetization"
+    seed_facts:
+      - "RevenueCat 2025: 35% of apps now combine subscriptions with consumables/lifetime"
+      - "Pure-subscription is no longer the default"
+      - "Onboarding must educate on multiple SKUs without paralysis (Hick's Law)"
+      - "Common: free + monthly + annual + lifetime; or free + 'pro pass' consumable"
+
+  - id: 42
+    name: "UGC Creative ↔ Onboarding Promise Alignment"
+    category: "F. Monetization"
+    seed_facts:
+      - "Mau Baron / Adapty 2026: first 3 onboarding screens must mirror the ad creative the user clicked"
+      - "'What happens in the 5 screens before the paywall determines whether it converts — not the paywall design itself'"
+      - "Cross-channel discipline: ad copy + ad visual + onboarding hook + paywall promise = single semantic chain"
+      - "Spark Ads (TikTok creator-sourced ads) cut CPA roughly in half in Mau Baron's funnel"
+      - "Implementation: ad-id passed as deep-link param → onboarding variant routed accordingly"
+
+  # ─────────────────────────────────────────────────────────────────
+  # G. TELEMETRY & EXPERIMENTATION (3)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 43
+    name: "Onboarding Tracking Plan Design (incl. Step-Level)"
+    category: "G. Telemetry"
+    seed_facts:
+      - "Step-level granularity: onboarding_step_viewed / completed / abandoned per step"
+      - "Properties: step_id, step_index, total_steps, ad_variant, locale, time_on_step_ms"
+      - "Schema-as-code: shared TS types between client and analytics SDK"
+      - "Auto-capture (UXCam) + explicit (PostHog/Mixpanel/Amplitude) hybrid is 2026 best practice"
+      - "Mojo data: 50% of trial starts come from onboarding paywall — step-level visibility critical"
+
+  - id: 44
+    name: "Funnel Analysis + Cohort/LTV Measurement"
+    category: "G. Telemetry"
+    seed_facts:
+      - "Funnel = visualization of dropoff between events; isolates surgical optimization targets"
+      - "Cohort = users grouped by install month / acquisition channel / experiment variant"
+      - "LTV is the only honest metric (DAU/MAU mask quality)"
+      - "Cohort LTV trend > absolute LTV — declining trend signals acquisition-quality decay"
+
+  - id: 45
+    name: "Feature Flag + A/B Test Infrastructure"
+    category: "G. Telemetry"
+    seed_facts:
+      - "PostHog (telemetry+flags+experiments+SR), LaunchDarkly, ConfigCat, Eppo"
+      - "Decouple deployment from release; ship binary with multiple variants"
+      - "Kill switch: instant revert if regression detected (no App Store cycle)"
+      - "Top performers run 14.7 paywall experiments/yr (RevenueCat/Adapty 2026)"
+      - "Experiment volume → up to 40× revenue gap vs non-testing teams"
+
+  # ─────────────────────────────────────────────────────────────────
+  # H. COMPLIANCE (5)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 46
+    name: "GDPR/CCPA + Data Minimization in Onboarding"
+    category: "H. Compliance"
+    seed_facts:
+      - "71% of countries have GDPR-style legislation as of 2025"
+      - "Data minimization: collect only what's strictly necessary for core function or explicit business objective"
+      - "GDPR-K (Italy/EU minors): explicit, age-appropriate consent flows"
+      - "Multi-million Euro fines for improper onboarding data collection (2024-2025)"
+
+  - id: 47
+    name: "CMP Integration + ATT Framework"
+    category: "H. Compliance"
+    seed_facts:
+      - "Axeptio, OneTrust, Usercentrics, Ketch — geo-aware consent injection"
+      - "GDPR: opt-in model (EU); CCPA: opt-out model (CA); auto-detection per IP/locale"
+      - "ATT (App Tracking Transparency): pre-permission soft-ask before native dialog → 2-3x opt-in lift"
+      - "Google Consent Mode v2 + IAB TCF integration for downstream tracker classification"
+
+  - id: 48
+    name: "COPPA-Compliant Age Gate + VPC Branching"
+    category: "H. Compliance"
+    seed_facts:
+      - "FTC amended COPPA Rule finalized 2025-04-22; compliance deadline 2026-04-22"
+      - "Expanded 'personal information': persistent IDs, biometric, geolocation, behavioral/inferred"
+      - "Mixed-audience apps must use neutral birthdate gates (NOT 'Are you 13+?')"
+      - "Under-13s route to verifiable parental consent (VPC) flow"
+      - "Disney $10M FTC settlement Dec 2025 — enforcement is real"
+
+  - id: 49
+    name: "EU Digital Fairness Act Dark-Pattern Audit"
+    category: "H. Compliance"
+    seed_facts:
+      - "Q4 2026 draft expected; targets dark patterns, addictive design, manipulative consent UIs"
+      - "Specifically flags: obstructive cancellation, fake urgency, pre-checked boxes, double-negatives"
+      - "BEUC SHEIN complaint June 2025 = first major signal"
+      - "Apps shipping in EU should pre-audit onboarding now"
+      - "Pairs with Center for Humane Technology critique"
+
+  - id: 50
+    name: "FTC Click-to-Cancel Compliance"
+    category: "H. Compliance"
+    seed_facts:
+      - "Effective 2025-07-14"
+      - "Cancellation must be as easy as signup (same number of clicks/screens)"
+      - "Onboarding subscription disclosures must mirror cancellation pathway"
+      - "NY/CA also strengthening state-level laws (multi-state compliance burden)"
+      - "Noncompliance → FTC enforcement actions (already several in late 2025)"
+
+  # ─────────────────────────────────────────────────────────────────
+  # I. ANTI-PATTERNS (1, holistic)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 51
+    name: "Six-Antipattern Audit + Modern Extensions"
+    category: "I. Anti-Patterns"
+    seed_facts:
+      - "Wall-of-Text + Cognitive Overload (deck-of-cards carousel)"
+      - "Premature Authentication (sign-up wall before value demo)"
+      - "No-Escape Room (rigid 12-step unskippable tour)"
+      - "Contextless Permissions (cold native dialog without priming)"
+      - "Wasted Loading Screens (blank spinner during fetch)"
+      - "Ignored Error States (broken state on network failure)"
+      - "Modern extensions (2025-2026): Decision Paralysis (5+ plans), Generic Celebration (mismatched archetype voice), Toggle Paywall (banned 2026-01)"
+
+  # ─────────────────────────────────────────────────────────────────
+  # J. EMOTIONAL DESIGN INTEGRATION (2)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 52
+    name: "Archetype-Driven Onboarding Voice (12 Jungian)"
+    category: "J. Emotional Integration"
+    seed_facts:
+      - "Magician onboarding: transformation language, AI reveal as the spell"
+      - "Caregiver: gentle pacing, no pressure, reassurance dominant"
+      - "Jester: playful microcopy, surprise moments, anti-corporate tone"
+      - "Outlaw: rule-breaking framing, anti-establishment social proof"
+      - "Ban list per archetype prevents archetype-mismatched defaults (e.g., Magician avoiding 'just' / 'simply' filler)"
+      - "Pairs with .agent/research/emotional-design/results/Jungian_Brand_Archetypes.json"
+
+  - id: 53
+    name: "Onboarding-as-Peak-Moment (Peak-End + Emotional Ladder)"
+    category: "J. Emotional Integration"
+    seed_facts:
+      - "Onboarding's peak moment = AI plan reveal / personalization payoff / first-celebration"
+      - "Onboarding's end moment = paywall (or empty state if soft) — must NOT degrade"
+      - "Emotional ladder: curiosity → trust → investment → reveal → commitment"
+      - "Pairs with .agent/research/emotional-design/results/Peak_End_Rule_Onboarding.json"
+
+  # ─────────────────────────────────────────────────────────────────
+  # K. CATEGORY-SPECIFIC (4)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 54
+    name: "Wellness/Habit Onboarding"
+    category: "K. Category-Specific"
+    seed_facts:
+      - "Calm, Headspace, Flo, Cal AI, Noom, Puff Count, Prayer Lock"
+      - "Long questionnaire dominant; AI plan reveal at climax; hard paywall"
+      - "Calm-leaning ethical posture; archetypes: Caregiver, Magician (transformation)"
+      - "Headspace 'Therapy' (2025) + Calm AI sleep stories (2025) — AI personalization is table stakes"
+
+  - id: 55
+    name: "Productivity/B2B Onboarding"
+    category: "K. Category-Specific"
+    seed_facts:
+      - "Monday.com: invite-a-colleague as core activation (network effect)"
+      - "Linear, Notion, Cron — minimal onboarding, opinionated empty states"
+      - "Sage/Ruler archetype dominant; user-instructions-first, not pressure"
+      - "Weight on team-onboarding (admin onboarding ≠ user onboarding)"
+
+  - id: 56
+    name: "Fintech Onboarding"
+    category: "K. Category-Specific"
+    seed_facts:
+      - "Acorns: success = link bank account; everything else subordinate"
+      - "KYC/identity verification as required step (compliance > UX)"
+      - "Trust-building dominant; security copy + bank-grade language"
+      - "Magic Link + Biometric Gate fits fintech well; passwords feel insecure"
+
+  - id: 57
+    name: "AI-Wrapper / Chat-First Onboarding"
+    category: "K. Category-Specific"
+    seed_facts:
+      - "Highest AI-slop risk (per .agent/research/emotional-design/results/AI_Slop_Tells.json)"
+      - "RevenueCat 2025: trial conversion 5.31% (vs 10.92% avg) but +14% direct purchase"
+      - "Conversation-first onboarding; first message = magic moment"
+      - "Story-onboarding doctrine particularly strong fit (Mau Baron's playbook adapts)"
+      - "Avoid: indigo-500 + purple-blue gradient + Lucide trinity defaults"
+
+  # ─────────────────────────────────────────────────────────────────
+  # L. NOTIFICATION & ENGAGEMENT (2)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 58
+    name: "Push Permission Priming + Internal Trigger Building"
+    category: "L. Notification"
+    seed_facts:
+      - "Cold native dialog tanks opt-in (iOS ~25% baseline); pre-permission soft-ask lifts to 60-80%"
+      - "Internal trigger building: external push attaches to internal emotion (Instagram boredom→app)"
+      - "Notification copy must serve user-stated goals (SDT) not extract attention"
+      - "Day-2 push must reinforce onboarding promise"
+
+  - id: 59
+    name: "Notification Ladder Day 0→1→2→7"
+    category: "L. Notification"
+    seed_facts:
+      - "Day 0: opt-in on initial value moment"
+      - "Day 1 (first 24h): triggered push reinforcing onboarding promise"
+      - "Day 2: habit-formation reinforcement"
+      - "Day 7: re-engagement push (or Day 14, depending on category)"
+      - "Each ring has different copy + success criteria; ladder = retention engine"
+
+  # ─────────────────────────────────────────────────────────────────
+  # M. MODERN AUTH (3)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 60
+    name: "Magic Link / Passwordless Onboarding"
+    category: "M. Modern Auth"
+    seed_facts:
+      - "Default for AI/wrapper apps in 2025-2026; removes 'Premature Auth' antipattern"
+      - "Architecture: deep-link handling, OTP fallback, anti-abuse (rate limit, OTP attempts)"
+      - "Supabase Auth, Auth0 Universal Login, Stytch, Clerk all support"
+      - "Email-link cold start adds 30-60s delay vs password — UX trade-off"
+
+  - id: 61
+    name: "Biometric Gate / Passkeys"
+    category: "M. Modern Auth"
+    seed_facts:
+      - "Face ID / Touch ID / WebAuthn passkeys = 2025-2026 default for sensitive verticals"
+      - "Pairs with passwordless — biometric REPLACES auth screen"
+      - "iOS Sign in with Apple + Apple Passkeys; Android Credential Manager"
+      - "Compliance bonus: COPPA-friendly (no password to reset for kids)"
+
+  - id: 62
+    name: "Social Graph / Contacts Import"
+    category: "M. Modern Auth"
+    seed_facts:
+      - "Post-2024 best practice: defer entirely until value felt"
+      - "Inverts older patterns (Path 2011, Snapchat early) that asked Day 0"
+      - "iOS Contacts permission requires NSContactsUsageDescription + first-launch dialog"
+      - "Privacy regulation pressure (GDPR, CCPA) makes Day-0 ask risky"
+
+  # ─────────────────────────────────────────────────────────────────
+  # N. CONTEXTUAL (1)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 63
+    name: "Time-of-Day-Aware Onboarding"
+    category: "N. Contextual"
+    seed_facts:
+      - "Wellness apps: surface evening calm flows after 8pm; morning planning before 10am"
+      - "Productivity: weekday vs weekend onboarding variants"
+      - "Increasingly common in 2025 health apps (Calm, Headspace)"
+      - "Implementation: client-side hour detection + state-machine variant routing"
+
+  # ─────────────────────────────────────────────────────────────────
+  # O. ACCESSIBILITY (1)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 64
+    name: "Accessibility-First Onboarding"
+    category: "O. Accessibility"
+    seed_facts:
+      - "WCAG 2.2 (ratified 2023-10): 9 new criteria — focus appearance, dragging alternatives, target size 24×24 px, redundant entry"
+      - "VoiceOver/TalkBack tested copy (no emoji-as-button-label)"
+      - "prefers-reduced-motion respect — replace animation with crossfade"
+      - "Dynamic-type / text-scaling support — fluid type up to 200%"
+      - "Color contrast 4.5:1 minimum; no motion-only triggers"
+      - "Required for App Store / Play Store compliance + EU EAA 2025"
+
+  # ─────────────────────────────────────────────────────────────────
+  # P. PRE-PERMISSION (1)
+  # ─────────────────────────────────────────────────────────────────
+  - id: 65
+    name: "Pre-Permission Soft-Ask Screen Pattern"
+    category: "P. Pre-Permission"
+    seed_facts:
+      - "Custom value-explanation screen BEFORE native OS permission dialog"
+      - "2-3x opt-in lift documented; up to 20% improvement from copy alone"
+      - "Architecture: sheet/modal on which 'Allow' triggers native dialog; 'Not now' defers"
+      - "Different from #24 (Permission Priming = pattern); this = the SCREEN artifact"
+      - "Industry tooling: Plotline, OneSignal Deferred Prompt, native bottom-sheet"
+
+execution:
+  batch_size: 5             # parallel agents launched concurrently in research-deep
+  items_per_agent: 13       # 65 items / 5 = 13 each
+  output_dir: "./results"   # relative to .agent/research/onboarding-v2/
+  agent_model_hint: "Use opus for psychology/architecture depth, sonnet acceptable for category/notification breadth. Agents must fact-check via web search and prefer authoritative sources (Apple Developer, Google I/O, RevenueCat, Adapty, Mobbin, NN/g, peer-reviewed papers, Eyal/Hooked, Kahneman, Sweller, Karri Saarinen, Mau Baron Starter Story playbook, Cal AI teardowns)."
+  agent_assignments:
+    - block: 1
+      agent_role: "PsychologyResearcher"
+      items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+      focus: "Foundations + Aha/Activation (psychology-heavy block)"
+    - block: 2
+      agent_role: "PatternsAndQuestionnaireResearcher"
+      items: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+      focus: "Onboarding patterns + early questionnaire items"
+    - block: 3
+      agent_role: "ArchitectureAndQuestionnaireResearcher"
+      items: [27, 28, 29, 30, 31, 32, 33, 43, 44, 45, 51, 52, 53]
+      focus: "Late questionnaire + architecture + telemetry + anti-patterns + emotional integration"
+    - block: 4
+      agent_role: "MonetizationAndComplianceResearcher"
+      items: [34, 35, 36, 37, 38, 39, 40, 41, 42, 46, 47, 48, 49]
+      focus: "All of monetization + compliance"
+    - block: 5
+      agent_role: "CategoryAndModernPracticesResearcher"
+      items: [50, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+      focus: "Click-to-Cancel + category-specific + notification + modern auth + contextual + accessibility + pre-permission"

@@ -1,0 +1,163 @@
+topic: "Mobile App Onboarding — Psychology, Design, Architecture, Monetization, and Compliance for 2026"
+generated: "2026-05-08"
+purpose: "Per-item field definitions for research-deep agents. Each item in outline.yaml will be filled against these fields. Designed to dovetail with .agent/research/emotional-design/fields.yaml (shared identity/evidence/application/ai_workflow/risks/references categories) and extend it with onboarding-specific dimensions (master prompt mapping, questionnaire/aha relevance, telemetry, measurement horizon, archetype alignment, anti-pattern pairing)."
+
+# Detail levels: brief (1-2 sentences) | moderate (1 short paragraph) | detailed (multi-paragraph with examples)
+
+categories:
+
+  identity:
+    description: "What this concept IS — origin and mechanism"
+    fields:
+      - name: definition_origin
+        description: "Who coined or formalized it, year, seminal source. Brief."
+        detail_level: brief
+
+      - name: core_mechanism
+        description: "The psychological / behavioral / architectural 'why' it works. What in human cognition, user behavior, or system design does this exploit, satisfy, or solve?"
+        detail_level: moderate
+
+      - name: neuroscience_correlate
+        description: "What brain systems engage (mesolimbic dopamine, default mode network, somatosensory cortex, amygdala, hippocampal binding for narrative). Optional — only if substantiated by research. For non-psychology items (architecture, compliance), skip or write 'N/A'."
+        detail_level: brief
+
+  evidence:
+    description: "How we know it works"
+    fields:
+      - name: empirical_evidence
+        description: "Studies, sample sizes, effect sizes, citations. Prefer peer-reviewed or large-N industry research (Material 3 Expressive 18,000 participants, RevenueCat State of Subs 2025/2026, Adapty 2026 paywall benchmarks, Sweller cognitive-load original papers, Kahneman peak-end papers, Eyal Hooked, NN/g)."
+        detail_level: detailed
+
+      - name: measurable_outcome_metric
+        description: "The KPI / metric that operationalizes this concept (D1/D7/D30 retention, trial conversion %, paywall conversion %, push opt-in rate, step completion rate, time-to-aha, LTV delta, cohort LTV, funnel dropoff)."
+        detail_level: brief
+
+      - name: evidence_strength
+        description: "One of: peer_reviewed | industry_benchmark (RevenueCat/Adapty/Mobbin/PostHog) | case_study (single-app teardown) | practitioner_opinion | legal_requirement | legal_requirement_pending. Lets master prompts weight items appropriately."
+        detail_level: brief
+
+      - name: conversion_lift_benchmark
+        description: "Quantified expected delta sourced to a 2024+ report when available (e.g. '+20% push opt-in', '1.35% trial conversion at onboarding paywall', '636% LTV lift with weekly+trial', '62.3% LTV win rate on localization tests'). Skip if uncertain — say 'unverified'."
+        detail_level: brief
+
+  application:
+    description: "How to actually use it in app development"
+    fields:
+      - name: engineering_tactics
+        description: "Concrete code/design implementations. Specific component patterns, library choices, configuration values, FSM states, server-driven UI payloads, paywall configurations."
+        detail_level: detailed
+
+      - name: real_world_examples
+        description: "Named apps with specific screen/feature references. NOT 'apps like Duolingo' — be specific: 'Duolingo's 0.7s lesson-complete celebration with the streak fire animation', 'Cal AI's step 22 of 33 where the personalized macro plan reveals'. Min 3 examples."
+        detail_level: detailed
+
+      - name: mobile_vs_web_diffs
+        description: "How this differs on mobile (touch, haptic, thumb zone, native APIs, OS permission dialogs, ATT, push) vs. web (hover, cursor, keyboard, viewport, web push, magic-link return). If no meaningful diff, say 'mobile-primary; web equivalent: <one-line>'."
+        detail_level: brief
+
+      - name: platform_design_language_alignment
+        description: "Does this align with Liquid Glass (iOS 26+, WWDC25), Material 3 Expressive (Android 16+, I/O 25, 18k-participant study showing 4× faster element discovery), or fight against them? Note Liquid Glass alert typography (bolder, left-aligned), translucent material, dynamic morphing controls. Note M3E expressive shape system, motion."
+        detail_level: brief
+
+      - name: category_fit
+        description: "Which app categories this is strongest for (wellness/habit, productivity/B2B, fintech, AI-wrapper, social, dating, journaling, edtech, fitness, gaming, marketplace, utility). Plus exclusions: 'do not use the 33-step Cal AI flow for productivity B2B'."
+        detail_level: brief
+
+      - name: solo_dev_feasibility
+        description: "Time-to-implement for a solo dev: same_day | 1_week | 1_month | requires_team. Critical for the user's solo-dev context. Note any dependencies (Adapty Pro paywall, Plotline OAuth setup, RevenueCat dashboard)."
+        detail_level: brief
+
+      - name: tooling_options
+        description: "Which onboarding/paywall/CMP/feature-flag tools support the pattern out of the box (Plotline, Superwall, Adapty, RevenueCat, Appcues Mobile, Pendo, Product Fruits, OnboardJS, PostHog, ConfigCat, LaunchDarkly, Eppo, Axeptio, OneTrust, Usercentrics). Note pricing tier where relevant."
+        detail_level: brief
+
+      - name: ai_dependency
+        description: "Does the pattern require an LLM call (Cal AI plan reveal, AI prayer, theatrical loader)? Captures cost, latency, offline-fallback, cache-strategy considerations. State: none | optional | required, plus model class needed (small classifier vs frontier reasoning)."
+        detail_level: brief
+
+  ai_workflow:
+    description: "How to instruct AI design tools to honor this concept"
+    fields:
+      - name: claude_design_application
+        description: "How to instruct Claude Design (code-gen — React/Tailwind/Reanimated/Framer Motion/Expo/SwiftUI) for this concept. Include 1-2 example prompt fragments. Reference v2 emotional-design 03a output format."
+        detail_level: moderate
+
+      - name: stitch_application
+        description: "How to instruct Google Stitch (text-only visual mockup tool) for this concept. Stitch can't accept images; spec must be exhaustive. Include 1-2 example prompt fragments. Reference v2 emotional-design 03b output format."
+        detail_level: moderate
+
+      - name: ai_codegen_failure_mode
+        description: "How does Claude/Cursor/v0/Lovable typically butcher this onboarding principle when generating code? What is the explicit prompt-counter? (e.g., 'AI defaults to Inter — explicitly request Cabinet Grotesk + Manrope and forbid Inter'; 'AI defaults to a single-screen account-creation form — explicitly require progressive disclosure with 5-7 steps and a step-counter')."
+        detail_level: moderate
+
+  risks:
+    description: "When this concept goes wrong or is dangerous"
+    fields:
+      - name: anti_patterns
+        description: "How it goes wrong, including the 'AI slop' version. Specific don'ts. Cross-reference the Six-Antipattern Audit item (Wall-of-Text, Premature Auth, No-Escape, Contextless Permissions, Wasted Loading, Ignored Errors)."
+        detail_level: moderate
+
+      - name: regulatory_risk
+        description: "Legal exposure under GDPR, CCPA, COPPA (2025 amendments, 2026-04-22 deadline), GDPR-K, EU Digital Fairness Act (Q4 2026 draft), FTC Click-to-Cancel (effective 2025-07-14), age-appropriate design code. Especially relevant for streaks, notifications, variable rewards, FOMO, social pressure, in-app currencies, kids/family apps. State 'Low/Medium/High' + reason."
+        detail_level: brief
+
+      - name: platform_constraints_2026
+        description: "iOS-specific (App Store guideline references — 3.1.1 IAP, 3.1.2 subscription disclosure, 4.8 sign-in, 5.1.1(v) data minimization, **2026-01 toggle-paywall ban**), Android-specific (Play Data Safety, target API 35 / 2025-08-31), or cross-platform. Captures rules that *forbid* a pattern, not just preferences."
+        detail_level: brief
+
+      - name: accessibility_implications
+        description: "Does the pattern create a WCAG 2.2 problem? (e.g., motion-only progress indicators violate 2.3.3 Animation; small touch targets violate 2.5.8 — 24×24 px minimum; non-keyboard-operable steps violate 2.1.1). VoiceOver/TalkBack considerations, dynamic-type/text-scale support, prefers-reduced-motion respect."
+        detail_level: brief
+
+      - name: pitfalls_caveats
+        description: "Subtler issues: cultural variation (covered separately if heavy), ethics, performance cost, latency on low-end devices, offline-mode behavior, network-flap recovery."
+        detail_level: brief
+
+      - name: cross_cultural_validity
+        description: "Non-Western applicability with specific evidence. Color symbolism in CN/JP/AR markets, haptic conventions, microcopy register, RTL considerations, paywall localization deltas (LATAM aggressive discount, JP social proof, US/EU price points). If unknown, say 'unverified'."
+        detail_level: brief
+
+  onboarding_specific:
+    description: "Onboarding-specific dimensions for master-prompt embedding"
+    fields:
+      - name: prescribed_action
+        description: "The concrete instruction the master prompt gives the user/AI when this concept applies. Imperative voice, 1-3 sentences. (e.g., 'Place the AI plan reveal at step N-1, immediately before the paywall; use a 4-7 second theatrical loader with copy that pretends to compute. Forbid: showing the loader for less than 3 seconds or more than 12 seconds.')"
+        detail_level: moderate
+
+      - name: master_prompt_relevance
+        description: "Which onboarding-v2 master prompt should embed this. Choose: 01_psychology | 02_design | 03_architecture | 04_implementation | 05_telemetry | 06_monetization_compliance. Multi-mark allowed."
+        detail_level: brief
+
+      - name: questionnaire_relevance
+        description: "How does this affect the questionnaire screens specifically? (sequencing, type, copy, payoff). 'N/A' if not relevant to questionnaire design."
+        detail_level: brief
+
+      - name: aha_relevance
+        description: "How does this contribute to the Aha moment, time-to-value, or activation? 'N/A' if not directly relevant."
+        detail_level: brief
+
+      - name: telemetry_events
+        description: "Concrete event names the item should emit (e.g., onboarding_step_viewed, onboarding_step_completed, onboarding_step_abandoned, paywall_dismissed_with_winback_shown, ai_plan_reveal_started, ai_plan_reveal_completed, push_primer_shown, push_native_dialog_shown, push_opted_in). Standardizes the tracking plan across projects."
+        detail_level: brief
+
+      - name: measurement_horizon
+        description: "Whether the item is judged on Day 0 conversion, Day 1 retention, Day 7 retention, Day 30 LTV, or 12-month LTV. Items get evaluated wrong when the time horizon is mismatched."
+        detail_level: brief
+
+      - name: emotional_archetype_alignment
+        description: "Which Jungian archetypes (12) does this item resonate with? Note any archetype mismatches (e.g., 'aggressive sunk-cost questionnaires conflict with Caregiver archetype voice'). Pairs with .agent/research/emotional-design/results/Jungian_Brand_Archetypes.json."
+        detail_level: brief
+
+      - name: anti_pattern_paired
+        description: "The mirror antipattern this item explicitly avoids (e.g., AI Plan Reveal pairs against Wasted Loading; Pre-Permission Soft-Ask Screen pairs against Contextless Permissions; Cross-Step Personalization Stitching pairs against feel-fake personalization). Forces the framework to be self-consistent."
+        detail_level: brief
+
+  references:
+    description: "Where to dig further"
+    fields:
+      - name: sources
+        description: "3-8 markdown links to verified authoritative sources. Prefer: Apple Developer / WWDC sessions, Google I/O / M3E docs, RevenueCat State of Subscription Apps 2025/2026, Adapty 2026 benchmarks, Superwall, NN/g, Mobbin, Appcues Mobile, peer-reviewed papers, Eyal/Hooked, Kahneman, Sweller, Karri Saarinen, Mau Baron's Starter Story playbook, Cal AI teardowns. Avoid generic Medium aggregators unless they are the sole source."
+        detail_level: brief
+
+# Reserved field — auto-filled by research-deep when an agent can't verify
+uncertain: []

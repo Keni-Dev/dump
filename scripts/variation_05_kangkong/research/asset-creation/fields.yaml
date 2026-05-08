@@ -1,0 +1,103 @@
+topic: "Asset Creation for Emotional App Design"
+generated: "2026-05-08"
+purpose: "Per-item field definitions for research-deep agents. 17 fields per item. Free-tools-first emphasis; explicit Gemini Pro callouts; anti-AI-slop discipline integrated."
+
+# Detail levels: brief (1-2 sentences) | moderate (1 short paragraph) | detailed (multi-paragraph with examples)
+
+categories:
+
+  identity:
+    description: "What this asset/concept IS"
+    fields:
+      - name: definition_origin
+        description: "What this asset type is, why it exists in app design. Brief."
+        detail_level: brief
+
+      - name: core_purpose
+        description: "What emotional / functional job this asset does in the app. Connect to Don Norman's Visceral / Behavioral / Reflective level."
+        detail_level: moderate
+
+      - name: when_needed
+        description: "Which app categories / surfaces require this asset. Consumer mobile / B2B / AI-wrapper / marketing differences."
+        detail_level: brief
+
+  formats:
+    description: "Technical format options"
+    fields:
+      - name: format_options
+        description: "Available file formats (SVG/PNG/WebP/Lottie/Rive/MP4/AHAP/3D-glTF/etc.) — when to use which. Include pros/cons per format with file-size + runtime considerations."
+        detail_level: detailed
+
+      - name: file_size_performance
+        description: "Optimization tactics, target file sizes for each format. Mobile/web specific."
+        detail_level: brief
+
+  tools:
+    description: "How to actually make this asset"
+    fields:
+      - name: free_tools
+        description: "Named free tools with capabilities + limitations + pricing/credit tier. Explicit list with 2026 currency. Cover: web-based AI tools, downloadable apps, browser-based editors. List 4-8 tools per item with specific use case."
+        detail_level: detailed
+
+      - name: paid_tools
+        description: "Named paid tools — when worth the cost, what threshold of need justifies the upgrade. List 2-4 tools with monthly cost. Tier the recommendations: 'starter $10-15/mo', 'pro $20-30/mo', 'enterprise $50+/mo'."
+        detail_level: moderate
+
+      - name: gemini_pro_workflow
+        description: "Specifically how the user's Gemini Pro access (Imagen 4, Veo, Whisk, Gems, NotebookLM) helps create THIS asset. Concrete prompt patterns + workflow steps."
+        detail_level: detailed
+
+  workflow:
+    description: "End-to-end production process"
+    fields:
+      - name: workflow_steps
+        description: "Concrete step-by-step process from concept to ship-ready asset. Include estimated time per step for a solo dev with zero design skill. 5-10 steps."
+        detail_level: detailed
+
+      - name: ai_prompt_templates
+        description: "Reusable AI prompt fragments specifically tested for this asset type. Include 2-4 templated prompts with placeholder variables."
+        detail_level: detailed
+
+      - name: claude_code_integration
+        description: "How Claude Code helps integrate this asset into a React / RN codebase — drop-location patterns, optimization scripts, runtime libraries to install."
+        detail_level: moderate
+
+  emotional_design:
+    description: "How this asset serves emotional design"
+    fields:
+      - name: emotional_design_integration
+        description: "How this asset signals brand archetype + Norman tripartite level. Concrete examples per archetype: how Caregiver vs Magician vs Jester would treat this asset differently."
+        detail_level: moderate
+
+      - name: specific_examples
+        description: "Named real apps that nail this asset type. Min 3 named apps with what they did and why it works. Include URLs to references where possible."
+        detail_level: detailed
+
+  risks:
+    description: "What goes wrong + how to avoid it"
+    fields:
+      - name: anti_ai_slop_traps
+        description: "Specific AI-slop tells for this asset type — gradient blobs, melted hands, isometric voxels, generic chibi mascots, default 3D renders. Be ruthlessly specific. Include explicit prompt-counter strategies."
+        detail_level: detailed
+
+      - name: common_pitfalls
+        description: "Non-AI-related common mistakes solo devs make with this asset type. Performance, accessibility, consistency, scope creep."
+        detail_level: moderate
+
+      - name: accessibility_notes
+        description: "Alt text patterns, color-not-only-signal, reduced-motion variants, screen-reader considerations."
+        detail_level: brief
+
+  context:
+    description: "Cross-cutting concerns"
+    fields:
+      - name: mobile_vs_web_diffs
+        description: "How this asset differs on mobile (icon sizes, retina, native runtimes) vs web (responsive, viewport, CDN). If no meaningful diff, say so."
+        detail_level: brief
+
+      - name: sources
+        description: "3-8 markdown links to authoritative sources — official tool docs, design-engineer posts (Rauno Freiberg, Pasquale D'Silva), tutorial creators (Steve Wolfson, Jorge R. Canedo Estrada), 2026-current articles."
+        detail_level: brief
+
+# Reserved
+uncertain: []
